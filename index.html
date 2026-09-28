@@ -1,0 +1,3126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>D'KANS English Learning Master • සිංහලෙන් ඉංග්‍රීසි චතුර ලෙස කතා කරමු</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Sinhala"', '"Iskoola Pota"', 'system-ui', 'sans-serif'],
+            sinhala: ['"Noto Sans Sinhala"', '"Iskoola Pota"', 'system-ui', 'sans-serif']
+          },
+          screens: {
+            'xs': '420px',
+          },
+          colors: {
+            dkans: {
+              gold: '#f59e0b',
+              accent: '#6366f1',
+              present: '#10b981',
+              past: '#f97316',
+              future: '#8b5cf6',
+              helping: '#06b6d4',
+              conj: '#ec4899',
+              darkbg: '#090d16'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Safe Area Padding for Modern Smart Devices */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    body {
+      padding-top: var(--sat);
+      padding-left: var(--sal);
+      padding-right: var(--sar);
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.2); }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #f59e0b, #ec4899, #8b5cf6, #06b6d4);
+      border-radius: 9999px;
+    }
+
+    /* Responsive Backgrounds */
+    .bg-dkans-light {
+      background-color: #f8fafc;
+      background-image:
+        radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.12) 0px, transparent 48%),
+        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 45%),
+        radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.09) 0px, transparent 45%),
+        radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.09) 0px, transparent 45%);
+      background-attachment: fixed;
+    }
+    .bg-dkans-dark {
+      background-color: #0b0f19;
+      background-image:
+        radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.15) 0px, transparent 48%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.18) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.12) 0px, transparent 45%),
+        radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 45%),
+        radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    @keyframes pulse-ring-glow {
+      0% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8), 0 0 16px rgba(245, 158, 11, 0.6); }
+      50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(239, 68, 68, 0), 0 0 22px rgba(236, 72, 153, 0.7); }
+      100% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0), 0 0 16px rgba(245, 158, 11, 0.6); }
+    }
+    .mic-live-pulse {
+      animation: pulse-ring-glow 1.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    .sinhala-font {
+      font-family: 'Noto Sans Sinhala', 'Iskoola Pota', system-ui, sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(203, 213, 225, 0.85);
+    }
+    .dark .glass-card {
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.85);
+    }
+
+    .callout-principle-card {
+      background: #f8fafc;
+      border: 2px solid #f59e0b;
+    }
+    .dark .callout-principle-card {
+      background: #111827;
+      border: 2px solid #fbbf24;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Touch target guarantee */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+
+<body class="bg-dkans-light dark:bg-dkans-dark text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300 pb-20 lg:pb-6 selection:bg-amber-500 selection:text-white">
+
+  <!-- ================= TOP HEADER (RESPONSIVE) ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-amber-200/50 dark:border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+
+      <!-- Left: Brand Logo & Title -->
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <button id="openMobileMenuBtn" onclick="toggleMobileNavDrawer()" class="lg:hidden touch-target flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+
+        <div class="flex items-center gap-2 sm:gap-3 cursor-pointer select-none min-w-0" onclick="switchActiveTab('shadowing')">
+          <div class="relative shrink-0">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-amber-400 via-pink-500 to-indigo-600 p-0.5 shadow-md shadow-amber-500/20">
+              <div class="w-full h-full bg-white dark:bg-slate-950 rounded-[14px] flex items-center justify-center">
+                <span class="text-base sm:text-lg font-black text-transparent bg-clip-text bg-gradient-to-tr from-amber-500 via-pink-500 to-indigo-500">D'K</span>
+              </div>
+            </div>
+            <span class="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+          </div>
+
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <h1 class="text-sm sm:text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-pink-600 to-indigo-600 dark:from-amber-400 dark:via-pink-400 dark:to-indigo-300 truncate">
+                D'KANS English
+              </h1>
+              <span class="hidden sm:inline-block text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-pink-500 text-white shadow-sm">
+                MASTER
+              </span>
+            </div>
+            <p class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 sinhala-font font-medium truncate hidden xs:block">
+              සිංහලෙන් ඉංග්‍රීසි චතුර ලෙස කතා කරමු
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Header Actions (Optimized for Mobile) -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        
+        <!-- Voice Gender Quick Switcher (Compact for Mobile) -->
+        <div class="flex items-center bg-slate-100 dark:bg-slate-800/90 p-0.5 sm:p-1 rounded-xl sm:rounded-2xl border border-indigo-200 dark:border-indigo-900 shadow-sm" title="Choose Voice Gender">
+          <button id="voiceGenderBtn-female" onclick="setAppVoiceGender('female')" class="touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black transition-all flex items-center gap-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-sm">
+            <span>👩</span>
+            <span class="hidden sm:inline">Female (කාන්තා)</span>
+            <span class="sm:hidden text-[10px]">F</span>
+          </button>
+          <button id="voiceGenderBtn-male" onclick="setAppVoiceGender('male')" class="touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600">
+            <span>👨</span>
+            <span class="hidden sm:inline">Male (පිරිමි)</span>
+            <span class="sm:hidden text-[10px]">M</span>
+          </button>
+          <button onclick="openVoiceSettingsModal()" class="touch-target p-1.5 text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition rounded-lg" title="Speech Settings">
+            <i class="fa-solid fa-sliders text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Fluency Streak (Desktop & Tablet) -->
+        <div class="hidden md:flex items-center gap-2 px-2.5 py-1.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300/80 dark:border-amber-700/80">
+          <i class="fa-solid fa-fire text-amber-500 text-sm animate-bounce"></i>
+          <div>
+            <span class="text-[8px] font-bold text-amber-700 dark:text-amber-300 uppercase block leading-none">Streak</span>
+            <span id="streakCountBadge" class="text-[11px] font-black text-amber-900 dark:text-amber-100">4 Days 🔥</span>
+          </div>
+        </div>
+
+        <!-- XP Badge -->
+        <div class="flex items-center gap-1 sm:gap-2 px-2 sm:px-2.5 py-1.5 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-300/80 dark:border-purple-700/80">
+          <i class="fa-solid fa-bolt text-purple-600 dark:text-purple-400 text-xs sm:text-sm"></i>
+          <span id="speakingXpBadge" class="text-[11px] sm:text-xs font-black text-purple-900 dark:text-purple-100">540 XP</span>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="themeButton" class="touch-target w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-orange-500 text-white dark:from-purple-900 dark:to-indigo-950 dark:text-yellow-300 flex items-center justify-center shadow hover:scale-105 active:scale-95 transition" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-sun dark:hidden text-sm sm:text-base"></i>
+          <i class="fa-solid fa-moon hidden dark:inline text-sm sm:text-base"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Desktop & Tablet Sub-Navbar (Scrollable Pills) -->
+    <div class="hidden lg:block border-t border-slate-200/80 dark:border-slate-800/80 px-4 py-2 overflow-x-auto">
+      <nav class="flex items-center gap-2 min-w-max mx-auto max-w-7xl">
+        <button onclick="switchActiveTab('shadowing')" id="navBtn-shadowing" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-2 transition duration-200 bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600 text-white shadow-md">
+          <i class="fa-solid fa-repeat"></i>
+          <span>Shadowing Coach (හඬ අනුකරණය)</span>
+        </button>
+
+        <button onclick="switchActiveTab('chunks')" id="navBtn-chunks" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-cyan-600">
+          <i class="fa-solid fa-cubes-stacked text-cyan-500"></i>
+          <span>Fluent Chunks (වාක්‍ය ඛණ්ඩ)</span>
+        </button>
+
+        <button onclick="switchActiveTab('roleplay')" id="navBtn-roleplay" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-purple-600">
+          <i class="fa-solid fa-comments text-purple-500"></i>
+          <span>Situational Gym (සැබෑ සංවාද)</span>
+        </button>
+
+        <button onclick="switchActiveTab('tenses')" id="navBtn-tenses" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-indigo-600">
+          <i class="fa-solid fa-layer-group text-indigo-500"></i>
+          <span>12 Tenses (කාල 12)</span>
+        </button>
+
+        <button onclick="switchActiveTab('helpingwords')" id="navBtn-helpingwords" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-emerald-600">
+          <i class="fa-solid fa-puzzle-piece text-emerald-500"></i>
+          <span>Helping Words (උපකාරක)</span>
+        </button>
+
+        <button onclick="switchActiveTab('conjunctions')" id="navBtn-conjunctions" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-pink-600">
+          <i class="fa-solid fa-link text-pink-500"></i>
+          <span>Conjunctions (සම්බන්ධක)</span>
+        </button>
+
+        <button onclick="switchActiveTab('fixer')" id="navBtn-fixer" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-amber-600">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i>
+          <span>AI Grammar Fixer</span>
+        </button>
+
+        <button onclick="switchActiveTab('verbtable')" id="navBtn-verbtable" class="nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-blue-600">
+          <i class="fa-solid fa-table-list text-blue-500"></i>
+          <span>V1 • V2 • V3</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE OFF-CANVAS NAVIGATION DRAWER ================= -->
+  <div id="mobileNavBackdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden transition-opacity" onclick="toggleMobileNavDrawer()"></div>
+  <aside id="mobileNavDrawer" class="fixed inset-y-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col justify-between overflow-y-auto p-4 sm:p-5">
+    <div class="space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-pink-500 flex items-center justify-center text-white font-black text-sm">D'K</div>
+          <span class="font-extrabold text-sm text-slate-900 dark:text-white">D'KANS Master</span>
+        </div>
+        <button onclick="toggleMobileNavDrawer()" class="touch-target p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Nav Links -->
+      <nav class="space-y-1.5 text-xs font-bold">
+        <button onclick="mobileNavClick('shadowing')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-repeat text-purple-500 text-sm"></i>
+          <span>Shadowing Coach (හඬ අනුකරණය)</span>
+        </button>
+        <button onclick="mobileNavClick('chunks')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-cyan-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-cubes-stacked text-cyan-500 text-sm"></i>
+          <span>Conversational Chunks (වාක්‍ය ඛණ්ඩ)</span>
+        </button>
+        <button onclick="mobileNavClick('roleplay')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-pink-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-comments text-pink-500 text-sm"></i>
+          <span>Situational Gym (සැබෑ සංවාද)</span>
+        </button>
+        <button onclick="mobileNavClick('tenses')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-layer-group text-indigo-500 text-sm"></i>
+          <span>12 Tenses (කාල 12 විස්තරාත්මකව)</span>
+        </button>
+        <button onclick="mobileNavClick('helpingwords')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-puzzle-piece text-emerald-500 text-sm"></i>
+          <span>Helping Words (උපකාරක ක්‍රියා)</span>
+        </button>
+        <button onclick="mobileNavClick('conjunctions')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-rose-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-link text-rose-500 text-sm"></i>
+          <span>Conjunctions (සම්බන්ධක පද)</span>
+        </button>
+        <button onclick="mobileNavClick('fixer')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-amber-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-500 text-sm"></i>
+          <span>AI Grammar & Sentence Fixer</span>
+        </button>
+        <button onclick="mobileNavClick('verbtable')" class="w-full text-left p-3 rounded-xl flex items-center gap-3 text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-table-list text-blue-500 text-sm"></i>
+          <span>Verb Table (V1 • V2 • V3)</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Footer Tools -->
+    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5">
+      <button onclick="openVoiceSettingsModal(); toggleMobileNavDrawer();" class="w-full py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold flex items-center justify-between text-slate-700 dark:text-slate-300">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-sliders text-indigo-500"></i> Audio Voice Settings</span>
+        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      </button>
+
+      <button onclick="openMissionsModal(); toggleMobileNavDrawer();" class="w-full py-2.5 px-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-xs font-bold flex items-center justify-between text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-bullseye text-amber-500"></i> Daily Missions (+XP)</span>
+        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= MOBILE THUMB-FRIENDLY BOTTOM BAR ================= -->
+  <nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-2 py-1.5 flex items-center justify-around shadow-lg" style="padding-bottom: calc(0.375rem + var(--sab));">
+    <button onclick="switchActiveTab('shadowing')" class="mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-purple-600 dark:text-purple-400 touch-target" id="mobileTabBtn-shadowing">
+      <i class="fa-solid fa-repeat text-base"></i>
+      <span class="text-[9px] font-extrabold mt-0.5">Shadow</span>
+    </button>
+    <button onclick="switchActiveTab('chunks')" class="mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-slate-500 dark:text-slate-400 touch-target" id="mobileTabBtn-chunks">
+      <i class="fa-solid fa-cubes-stacked text-base"></i>
+      <span class="text-[9px] font-bold mt-0.5">Chunks</span>
+    </button>
+    <button onclick="switchActiveTab('roleplay')" class="mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-slate-500 dark:text-slate-400 touch-target" id="mobileTabBtn-roleplay">
+      <i class="fa-solid fa-comments text-base"></i>
+      <span class="text-[9px] font-bold mt-0.5">Gym</span>
+    </button>
+    <button onclick="switchActiveTab('tenses')" class="mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-slate-500 dark:text-slate-400 touch-target" id="mobileTabBtn-tenses">
+      <i class="fa-solid fa-layer-group text-base"></i>
+      <span class="text-[9px] font-bold mt-0.5">Tenses</span>
+    </button>
+    <button onclick="switchActiveTab('fixer')" class="mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-slate-500 dark:text-slate-400 touch-target" id="mobileTabBtn-fixer">
+      <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
+      <span class="text-[9px] font-bold mt-0.5">Fixer</span>
+    </button>
+  </nav>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 w-full flex-1">
+
+    <!-- ================= SECTION 1: SHADOWING TRAINER ================= -->
+    <section id="section-shadowing" class="space-y-4 sm:space-y-6">
+      
+      <!-- Responsive Hero Banner -->
+      <div class="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-500 via-pink-600 to-purple-700 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
+            <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-white/20 backdrop-blur-md border border-white/30 text-white">
+              <i class="fa-solid fa-fire mr-1 text-yellow-300"></i> D'KANS Spoken Fluency
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold bg-emerald-400 text-slate-900">
+              SHADOWING GYM
+            </span>
+          </div>
+          <h2 class="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight">
+            English Shadowing Trainer (හඬ අනුකරණය)
+          </h2>
+          <p class="text-xs sm:text-sm lg:text-base text-amber-100 mt-2 sinhala-font leading-relaxed font-medium">
+            ස්වදේශික කථිකයා පවසන රිද්මය සහ වචන එකිනෙක යා වන ආකාරය (Connected speech) අසා, ක්ෂණිකව මයික්‍රෆෝනයෙන් නැවත කියා ලකුණු ලබාගන්න.
+          </p>
+
+          <div class="flex flex-wrap gap-2 sm:gap-3 mt-3 sm:mt-4 pt-3 border-t border-white/20 text-[10px] sm:text-xs font-bold text-amber-200">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-check text-emerald-300"></i> 1. Listen</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-check text-emerald-300"></i> 2. Shadow</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-check text-emerald-300"></i> 3. Score (+XP)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shadowing Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+        
+        <!-- Left: Active Shadowing Drill Card -->
+        <div class="lg:col-span-2 glass-card p-4 sm:p-7 rounded-3xl shadow-xl flex flex-col justify-between space-y-5">
+          <div>
+            <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-slate-200 dark:border-slate-800 gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300" id="shadowingCategoryBadge">
+                  Daily Casual
+                </span>
+                <span class="text-[11px] sm:text-xs font-bold text-slate-400">Drill <span id="shadowingDrillIndex">1</span>/<span id="shadowingTotalDrills">6</span></span>
+              </div>
+
+              <!-- Speed Controller -->
+              <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-0.5 sm:p-1 rounded-xl shrink-0">
+                <button onclick="setShadowPlaybackRate(0.8)" id="rate-08" class="touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-bold rounded-lg text-slate-600 dark:text-slate-400">0.8x Slow</button>
+                <button onclick="setShadowPlaybackRate(1.0)" id="rate-10" class="touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-extrabold rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-300 shadow-sm">1.0x Normal</button>
+              </div>
+            </div>
+
+            <!-- Sentence Display -->
+            <div class="mt-4 sm:mt-6 text-center space-y-2 sm:space-y-3">
+              <span class="text-[10px] sm:text-xs font-black uppercase tracking-wider text-slate-400">Target Spoken Phrase</span>
+              <h3 id="shadowTargetEnglish" class="text-lg sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight leading-snug">
+                "I was wondering if you could help me for a moment."
+              </h3>
+              <p id="shadowTargetSinhala" class="text-xs sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-pink-600 dark:from-amber-400 dark:to-pink-300 sinhala-font">
+                "ඔබට මොහොතකට මට උදව් කළ හැකිදැයි මා කල්පනා කළෙමි."
+              </p>
+            </div>
+
+            <!-- Connected Speech Tip -->
+            <div class="mt-4 sm:mt-6 p-3.5 sm:p-4 rounded-2xl bg-amber-50/90 dark:bg-slate-900 border-2 border-amber-400 dark:border-amber-500 shadow-sm flex items-start gap-2.5 sm:gap-3">
+              <i class="fa-solid fa-lightbulb text-amber-600 dark:text-amber-400 text-base sm:text-lg mt-0.5 shrink-0"></i>
+              <div>
+                <h5 class="text-[10px] sm:text-xs font-black text-amber-950 dark:text-amber-300 uppercase tracking-wide">Native Connected Speech Tip:</h5>
+                <p id="shadowPhoneticTip" class="text-xs sm:text-sm text-slate-800 dark:text-slate-100 sinhala-font mt-1 font-semibold leading-relaxed">
+                  'I was wondering if you' එක දිගට ශබ්ද වන්නේ 'I-wz-wondering-if-ya' ලෙසය.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wave & Recording Controller (Stacked on mobile) -->
+          <div class="space-y-3 pt-3 sm:pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div class="h-12 sm:h-16 w-full bg-slate-100 dark:bg-slate-950 rounded-2xl flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-800 relative">
+              <div id="waveBarsContainer" class="flex items-center gap-1.5 h-8">
+                <span class="w-1.5 h-2 bg-amber-400 rounded-full transition-all duration-150"></span>
+                <span class="w-1.5 h-4 bg-pink-400 rounded-full transition-all duration-150"></span>
+                <span class="w-1.5 h-7 bg-indigo-500 rounded-full transition-all duration-150"></span>
+                <span class="w-1.5 h-3 bg-cyan-400 rounded-full transition-all duration-150"></span>
+                <span class="w-1.5 h-5 bg-purple-500 rounded-full transition-all duration-150"></span>
+                <span class="w-1.5 h-2 bg-amber-500 rounded-full transition-all duration-150"></span>
+              </div>
+              <span id="shadowStatusNotice" class="absolute text-[10px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider px-2 text-center truncate">
+                Click Listen, then hit Record to Shadow
+              </span>
+            </div>
+
+            <!-- Action Buttons: Stacks cleanly on mobile -->
+            <div class="grid grid-cols-1 xs:grid-cols-2 sm:flex items-center gap-2.5">
+              <button onclick="playShadowNativeVoice()" class="touch-target sm:flex-1 py-3 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 text-white font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>1. Listen (අසන්න)</span>
+              </button>
+
+              <button id="shadowRecordMicBtn" onclick="toggleShadowVoiceRecording()" class="touch-target sm:flex-1 py-3 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 text-white font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-microphone"></i>
+                <span id="shadowRecordBtnText">2. Shadow (කියන්න)</span>
+              </button>
+
+              <button onclick="nextShadowDrill()" class="touch-target col-span-full xs:col-auto p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white transition flex items-center justify-center gap-1.5 font-bold text-xs" title="Next Drill">
+                <span class="xs:hidden">Next Drill</span>
+                <i class="fa-solid fa-forward-step"></i>
+              </button>
+            </div>
+
+            <!-- Feedback -->
+            <div id="shadowFeedbackCard" class="hidden p-3.5 sm:p-4 rounded-2xl border transition-all">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span id="shadowScoreBadge" class="text-base sm:text-lg font-black px-2.5 py-0.5 rounded-xl bg-white dark:bg-slate-900 border">92%</span>
+                  <span id="shadowAccuracyFeedback" class="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Excellent Cadence!</span>
+                </div>
+                <span id="shadowXpEarnedBadge" class="text-xs font-black text-amber-500">+30 XP</span>
+              </div>
+              <p id="shadowHeardText" class="text-[11px] sm:text-xs font-medium text-slate-600 dark:text-slate-300 mt-2 font-mono break-words"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Drill Library & Principle -->
+        <div class="space-y-4">
+          <div class="glass-card p-4 sm:p-5 rounded-3xl shadow-lg">
+            <h4 class="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-pink-500"></i> Shadowing Library (පුහුණු වාක්‍ය)
+            </h4>
+            <div id="shadowingPlaylistContainer" class="space-y-2 max-h-56 sm:max-h-72 overflow-y-auto pr-1"></div>
+          </div>
+
+          <div class="callout-principle-card p-4 sm:p-5 rounded-3xl shadow-md">
+            <h5 class="text-xs sm:text-sm font-black uppercase text-amber-900 dark:text-amber-300 flex items-center gap-2 tracking-wide">
+              <i class="fa-solid fa-graduation-cap text-amber-600 dark:text-amber-400 text-base"></i> D'KANS PRINCIPLE:
+            </h5>
+            <p class="text-xs sm:text-sm text-slate-900 dark:text-slate-50 sinhala-font mt-2 leading-relaxed font-semibold">
+              තනි වචන කටපාඩම් කිරීම වෙනුවට සම්පූර්ණ වාක්‍ය ඛණ්ඩ (Phrases) එක හුස්මට ශබ්ද නගා පුහුණු වීමෙන් ඔබේ කටේ පේශි ඉංග්‍රීසි භාෂාවේ රිද්මයට හැඩගැසේ.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: FLUENT CHUNKS ================= -->
+    <section id="section-chunks" class="hidden space-y-4 sm:space-y-6">
+      <div class="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-cyan-600 via-teal-600 to-indigo-700 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-white/20 backdrop-blur-md border border-white/30 text-white">
+            <i class="fa-solid fa-cubes-stacked mr-1.5 text-yellow-300"></i> D'KANS Chunking Vault
+          </span>
+          <h2 class="text-xl sm:text-3xl lg:text-4xl font-black mt-2 tracking-tight">
+            Conversational Chunking (ස්වභාවික වාක්‍ය ඛණ්ඩ)
+          </h2>
+          <p class="text-xs sm:text-sm text-cyan-100 mt-2 sinhala-font leading-relaxed font-medium">
+            ව්‍යාකරණ සිතමින් කාලය නාස්ති නොකර ස්වදේශිකයන් කතා කරන සූදානම් වාක්‍ය රටා කටපාඩම් කරගෙන ක්ෂණිකව කතා කරන්න.
+          </p>
+
+          <!-- Horizontal Scroll Filter for Mobile -->
+          <div class="flex gap-2 mt-3 sm:mt-4 overflow-x-auto pb-1 -mx-2 px-2">
+            <button onclick="filterChunksCategory('all')" class="chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-black bg-white text-cyan-900 shadow-sm" data-chunkcat="all">All</button>
+            <button onclick="filterChunksCategory('requests')" class="chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-chunkcat="requests">Requests (ඉල්ලීම්)</button>
+            <button onclick="filterChunksCategory('opinions')" class="chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-chunkcat="opinions">Opinions (අදහස්)</button>
+            <button onclick="filterChunksCategory('disagreement')" class="chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-chunkcat="disagreement">Disagreeing</button>
+            <button onclick="filterChunksCategory('daily')" class="chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-chunkcat="daily">Daily</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="chunksCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+    </section>
+
+    <!-- ================= SECTION 3: SITUATIONAL ROLEPLAY GYM ================= -->
+    <section id="section-roleplay" class="hidden space-y-4 sm:space-y-6">
+      <div class="glass-card p-4 sm:p-8 rounded-3xl shadow-xl">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-gradient-to-r from-amber-500 to-indigo-600 text-white shadow-md">
+                <i class="fa-solid fa-microphone mr-1"></i> Interactive Gym
+              </span>
+              <span class="text-[10px] sm:text-xs font-bold text-emerald-500 font-mono">LIVE SPEECH ACTIVE</span>
+            </div>
+            <h2 class="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1.5">
+              Situational Spoken English Gym (සැබෑ සංවාද)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 sinhala-font font-medium">
+              මයික්‍රෆෝනයෙන් කතා කරන්න. ඔබ තෝරාගත් <span id="roleplayVoiceIndicatorText" class="font-bold text-pink-500">Female Voice</span> හඬින් AI පිළිතුරු ලබා දෙයි.
+            </p>
+          </div>
+
+          <!-- Scenario Dropdown (Full width on mobile) -->
+          <div class="w-full lg:w-auto">
+            <select id="roleplayScenarioDropdown" onchange="onScenarioSelectChange()" class="w-full lg:w-72 px-3.5 py-2.5 bg-slate-100 dark:bg-slate-800 border-2 border-indigo-300 dark:border-indigo-800 rounded-2xl text-xs sm:text-sm font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-500">
+              <option value="job_interview">💼 Job Interview (සම්මුඛ පරීක්ෂණය)</option>
+              <option value="airport_hotel">✈️ Airport & Hotel Check-in</option>
+              <option value="supermarket">🛒 Supermarket & Shopping</option>
+              <option value="doctor_visit">🏥 Doctor Appointment</option>
+              <option value="daily_chitchat">☕ Casual Coffee Talk</option>
+              <option value="software_standup">💻 IT Project Daily Standup</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-6">
+          
+          <!-- Chat Messages List -->
+          <div class="lg:col-span-2 flex flex-col h-[400px] sm:h-[480px] bg-slate-50/90 dark:bg-slate-950/70 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner">
+            <div id="roleplayMessagesList" class="flex-1 p-3.5 sm:p-5 overflow-y-auto space-y-3 sm:space-y-4"></div>
+
+            <div class="p-2.5 sm:p-3.5 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2">
+              <button id="roleplayVoiceMicBtn" onclick="toggleRoleplayMicRecording()" class="touch-target w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-600 hover:from-pink-600 text-white flex items-center justify-center shrink-0 shadow-md transition" title="Speak into microphone">
+                <i class="fa-solid fa-microphone text-base sm:text-lg"></i>
+              </button>
+
+              <input type="text" id="roleplayTextInput" placeholder="Speak or type in English..." 
+                     onkeypress="if(event.key==='Enter') sendRoleplayChatMessage()"
+                     class="flex-1 px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-800 dark:text-slate-100 font-semibold min-w-0">
+
+              <button onclick="sendRoleplayChatMessage()" class="touch-target px-3.5 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 text-white rounded-2xl font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md shrink-0">
+                <span class="hidden xs:inline">Send</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scenario Helper -->
+          <div class="flex flex-col gap-3 sm:gap-4">
+            <div class="p-4 rounded-3xl bg-amber-50 dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-500/60 shadow-sm">
+              <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-amber-950 dark:text-amber-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-compass text-amber-600 dark:text-amber-400"></i> අවස්ථාවේ අරමුණ (Goal):
+              </h4>
+              <p id="scenarioOverviewText" class="text-xs sm:text-sm text-slate-800 dark:text-slate-100 mt-1.5 sinhala-font leading-relaxed font-semibold"></p>
+            </div>
+
+            <div class="glass-card p-4 rounded-3xl flex-1 flex flex-col">
+              <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i> Suggested Starters:
+              </h4>
+              <div id="suggestedPhrasesList" class="space-y-2 overflow-y-auto max-h-48 sm:max-h-64 pr-1"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: 12 TENSES ================= -->
+    <section id="section-tenses" class="hidden flex flex-col lg:flex-row gap-4 sm:gap-6">
+      
+      <!-- Mobile Tense Drawer Backdrop -->
+      <div id="mobileTenseBackdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 hidden lg:hidden" onclick="toggleTenseListDrawer()"></div>
+
+      <!-- Tenses Drawer (Off-canvas on mobile, static on desktop) -->
+      <aside id="tensesDrawer" class="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl p-4 transform -translate-x-full transition-transform duration-300 lg:static lg:transform-none lg:w-80 lg:p-0 lg:bg-transparent lg:dark:bg-transparent flex flex-col gap-3.5 shrink-0 overflow-y-auto">
+        <div class="flex items-center justify-between lg:hidden pb-3 border-b border-slate-200 dark:border-slate-800">
+          <span class="font-extrabold text-sm text-slate-800 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-indigo-500"></i> All 12 Tenses
+          </span>
+          <button onclick="toggleTenseListDrawer()" class="touch-target p-2 text-slate-400 hover:text-slate-800 dark:hover:text-white rounded-xl">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Master Tense Progress -->
+        <div class="p-4 rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-trophy text-amber-300 text-xs"></i>
+              <span class="text-xs font-bold uppercase sinhala-font">කාල ප්‍රගතිය</span>
+            </div>
+            <span id="masterProgressPct" class="text-xs font-black bg-white/25 px-2 py-0.5 rounded-full border border-white/20">0%</span>
+          </div>
+
+          <div class="w-full bg-black/25 rounded-full h-2.5 p-0.5 overflow-hidden">
+            <div id="masterProgressBar" class="h-full rounded-full bg-gradient-to-r from-amber-300 to-emerald-300 transition-all duration-500" style="width: 0%"></div>
+          </div>
+
+          <div class="flex justify-between items-center text-[11px] mt-2.5 text-purple-100 font-medium">
+            <span>සම්පූර්ණයි: <b id="masterCompletedCount" class="text-white font-extrabold">0</b> / 12</span>
+            <button onclick="resetUserProgress()" class="text-pink-200 hover:text-white underline text-[10px]">Reset</button>
+          </div>
+        </div>
+
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-500 text-xs"></i>
+          <input type="text" id="tenseSearchInput" placeholder="Search tense or සිංහලෙන්..." 
+                 class="w-full pl-9 pr-3 py-2 text-xs bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm">
+        </div>
+
+        <div class="grid grid-cols-4 gap-1 p-1 bg-slate-200/70 dark:bg-slate-800/80 backdrop-blur-md rounded-xl text-[11px] font-bold">
+          <button onclick="setTenseFilter('all')" data-cat="all" class="cat-filter-btn py-1.5 rounded-lg bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-sm text-center">All</button>
+          <button onclick="setTenseFilter('present')" data-cat="present" class="cat-filter-btn py-1.5 rounded-lg text-slate-600 dark:text-slate-400 text-center">Pres</button>
+          <button onclick="setTenseFilter('past')" data-cat="past" class="cat-filter-btn py-1.5 rounded-lg text-slate-600 dark:text-slate-400 text-center">Past</button>
+          <button onclick="setTenseFilter('future')" data-cat="future" class="cat-filter-btn py-1.5 rounded-lg text-slate-600 dark:text-slate-400 text-center">Fut</button>
+        </div>
+
+        <div id="tenseItemsContainer" class="flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-320px)] pr-1"></div>
+      </aside>
+
+      <!-- Center Tense Content -->
+      <div class="flex-1 min-w-0 flex flex-col gap-4 sm:gap-6">
+        
+        <!-- Mobile Trigger for Tenses Drawer -->
+        <div class="lg:hidden flex items-center justify-between p-3 rounded-2xl glass-card">
+          <button onclick="toggleTenseListDrawer()" class="touch-target px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-300 font-extrabold text-xs flex items-center gap-2 border border-indigo-200 dark:border-indigo-800">
+            <i class="fa-solid fa-list-ol"></i>
+            <span>Browse All 12 Tenses (තෝරන්න)</span>
+          </button>
+          <span class="text-xs font-bold text-slate-400" id="mobileCurrentTenseBadge">1 of 12</span>
+        </div>
+
+        <!-- Tense Hero Card -->
+        <div id="tenseHeroCard" class="glass-card p-4 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden transition-all">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-center">
+            
+            <div class="md:col-span-2 space-y-2">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span id="heroCategoryBadge" class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-emerald-100 text-emerald-900 dark:bg-emerald-950 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700">
+                  Present Tense
+                </span>
+                <span id="heroCompletedBadge" class="hidden px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-extrabold bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-sm">
+                  <i class="fa-solid fa-circle-check mr-1"></i> Completed
+                </span>
+              </div>
+
+              <h2 id="heroTenseName" class="text-xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                Simple Present Tense
+              </h2>
+              <p id="heroTenseSinhala" class="text-sm sm:text-lg font-extrabold text-indigo-700 dark:text-indigo-300 sinhala-font">
+                සරල වර්තමාන කාලය
+              </p>
+              
+              <!-- Action Toolbar -->
+              <div class="flex flex-wrap items-center gap-2 pt-2">
+                <button onclick="navigateTenseIndex(-1)" class="touch-target p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-800 dark:text-slate-200 transition" title="Previous">
+                  <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="scrollToExercise()" class="touch-target px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-pink-600 to-indigo-600 text-white font-black text-xs sm:text-sm shadow-md flex items-center gap-1.5">
+                  <i class="fa-solid fa-pen-clip"></i>
+                  <span>Exercise</span>
+                </button>
+                <button id="toggleCompletedBtn" onclick="toggleCurrentLessonDone()" class="touch-target px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-check"></i>
+                  <span id="toggleCompletedBtnText">Done</span>
+                </button>
+                <button onclick="navigateTenseIndex(1)" class="touch-target p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-800 dark:text-slate-200 transition" title="Next">
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tense Context Image -->
+            <div class="relative group overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 aspect-video md:aspect-square bg-slate-100 dark:bg-slate-800">
+              <img id="heroTenseImage" src="" alt="Tense Visual Context" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                   onerror="this.src='https://placehold.co/600x400/4f46e5/ffffff?text=Grammar'"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent flex items-end p-2.5 sm:p-3">
+                <p id="heroTenseImageCaption" class="text-[11px] sm:text-xs text-white font-bold sinhala-font">
+                  දෛනික පුරුදු සහ ස්වභාවික සත්‍යයන්
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-200 dark:border-slate-800">
+            <h3 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-question text-purple-600 dark:text-purple-400"></i> භාවිතය සහ නීති (Rules)
+            </h3>
+            <p id="heroExplanation" class="text-slate-800 dark:text-slate-100 text-xs sm:text-base leading-relaxed sinhala-font whitespace-pre-line font-medium"></p>
+          </div>
+        </div>
+
+        <!-- FORMULA BADGES (Stacked on mobile) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+          <div class="p-4 rounded-2xl sm:rounded-3xl bg-emerald-50 dark:bg-emerald-950/40 border-2 border-emerald-300 dark:border-emerald-800 shadow-sm space-y-1.5">
+            <span class="text-[9px] sm:text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200">
+              Affirmative (+)
+            </span>
+            <p id="formulaAffirmative" class="font-mono text-xs sm:text-sm font-black text-emerald-900 dark:text-emerald-300 break-words"></p>
+            <p id="descAffirmative" class="text-[11px] sm:text-xs text-emerald-800 dark:text-emerald-200 sinhala-font font-medium"></p>
+          </div>
+
+          <div class="p-4 rounded-2xl sm:rounded-3xl bg-rose-50 dark:bg-rose-950/40 border-2 border-rose-300 dark:border-rose-800 shadow-sm space-y-1.5">
+            <span class="text-[9px] sm:text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-900 text-rose-900 dark:text-rose-200">
+              Negative (-)
+            </span>
+            <p id="formulaNegative" class="font-mono text-xs sm:text-sm font-black text-rose-900 dark:text-rose-300 break-words"></p>
+            <p id="descNegative" class="text-[11px] sm:text-xs text-rose-800 dark:text-rose-200 sinhala-font font-medium"></p>
+          </div>
+
+          <div class="p-4 rounded-2xl sm:rounded-3xl bg-amber-50 dark:bg-amber-950/40 border-2 border-amber-300 dark:border-amber-800 shadow-sm space-y-1.5">
+            <span class="text-[9px] sm:text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200">
+              Question (?)
+            </span>
+            <p id="formulaQuestion" class="font-mono text-xs sm:text-sm font-black text-amber-900 dark:text-amber-300 break-words"></p>
+            <p id="descQuestion" class="text-[11px] sm:text-xs text-amber-800 dark:text-amber-200 sinhala-font font-medium"></p>
+          </div>
+        </div>
+
+        <!-- SENTENCES & EXAMPLES -->
+        <div class="glass-card p-4 sm:p-7 rounded-3xl shadow-xl space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 gap-2">
+            <h3 class="text-sm sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fa-solid fa-volume-high text-indigo-500"></i> Spoken Examples (හඬ සහ සිංහල තේරුම)
+            </h3>
+            <div class="flex items-center gap-1 text-xs">
+              <button onclick="filterExamplesBy('all')" data-extype="all" class="ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg bg-purple-600 text-white">All</button>
+              <button onclick="filterExamplesBy('positive')" data-extype="positive" class="ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg text-slate-600 dark:text-slate-300">(+)</button>
+              <button onclick="filterExamplesBy('negative')" data-extype="negative" class="ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg text-slate-600 dark:text-slate-300">(-)</button>
+              <button onclick="filterExamplesBy('question')" data-extype="question" class="ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg text-slate-600 dark:text-slate-300">(?)</button>
+            </div>
+          </div>
+
+          <div id="sentencesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4"></div>
+
+          <!-- Time Markers -->
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+            <span class="text-[10px] sm:text-xs font-black uppercase tracking-wider text-slate-400 block mb-2">Time Signal Words:</span>
+            <div id="timeMarkersContainer" class="flex flex-wrap gap-1.5 sm:gap-2"></div>
+          </div>
+        </div>
+
+        <!-- EXERCISE QUIZ -->
+        <div id="exerciseAnchor" class="glass-card p-4 sm:p-7 rounded-3xl shadow-xl space-y-4 border-2 border-indigo-200 dark:border-indigo-900">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+            <div>
+              <h3 class="text-base sm:text-xl font-black text-slate-900 dark:text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-pen-ruler text-pink-500"></i> Lesson Exercise (අභ්‍යාසය)
+              </h3>
+              <p class="text-[11px] text-slate-500 sinhala-font font-medium">නිවැරදි පිළිතුර තෝරා සිංහල පැහැදිලි කිරීම කියවන්න</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span id="lessonScoreBadge" class="px-2.5 py-1 rounded-xl bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300 text-xs font-black">0 / 0</span>
+              <button onclick="retryCurrentQuiz()" class="touch-target p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-500 transition" title="Reset Quiz">
+                <i class="fa-solid fa-rotate-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="lessonQuestionsContainer" class="space-y-3.5"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: HELPING WORDS ================= -->
+    <section id="section-helpingwords" class="hidden space-y-4 sm:space-y-6">
+      <div class="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-cyan-600 via-teal-600 to-indigo-700 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-white/20 backdrop-blur-md border border-white/30 text-white">
+            <i class="fa-solid fa-puzzle-piece mr-1.5 text-yellow-300"></i> Auxiliary & Modal Verbs
+          </span>
+          <h2 class="text-xl sm:text-3xl lg:text-4xl font-black mt-2 tracking-tight">
+            උපකාරක ක්‍රියා පද (Helping Words Hub)
+          </h2>
+          <p class="text-xs sm:text-sm text-cyan-100 mt-2 sinhala-font leading-relaxed font-medium">
+            ඉංග්‍රීසි වාක්‍ය තැනීමේදී ප්‍රධාන ක්‍රියාපදයට සහාය වන 'Be, Do, Have' සහ Modals නිවැරදිව භාවිත කරන ආකාරය ඉගෙන ගන්න.
+          </p>
+
+          <div class="flex gap-2 mt-3 sm:mt-4 overflow-x-auto pb-1 -mx-2 px-2">
+            <button onclick="filterHelpingCategory('all')" class="hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-black bg-white text-cyan-800 shadow-sm" data-hwcat="all">All</button>
+            <button onclick="filterHelpingCategory('be')" class="hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-hwcat="be">Be Verbs</button>
+            <button onclick="filterHelpingCategory('do')" class="hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-hwcat="do">Do Verbs</button>
+            <button onclick="filterHelpingCategory('have')" class="hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-hwcat="have">Have Verbs</button>
+            <button onclick="filterHelpingCategory('modal')" class="hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-hwcat="modal">Modals</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="helpingWordsCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+
+      <!-- Quiz -->
+      <div class="glass-card p-4 sm:p-7 rounded-3xl border-2 border-cyan-300 dark:border-cyan-800 shadow-xl space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+          <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-puzzle-piece text-cyan-500"></i> Helping Words අභ්‍යාසය
+          </h3>
+          <span id="helpingWordsScoreBadge" class="text-xs font-black px-2.5 py-1 rounded-xl bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300">0 / 0</span>
+        </div>
+        <div id="helpingWordsQuizContainer" class="space-y-3.5"></div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: CONJUNCTIONS ================= -->
+    <section id="section-conjunctions" class="hidden space-y-4 sm:space-y-6">
+      <div class="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-pink-600 via-rose-600 to-purple-700 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-white/20 backdrop-blur-md border border-white/30 text-white">
+            <i class="fa-solid fa-link mr-1.5 text-yellow-300"></i> Linking Words
+          </span>
+          <h2 class="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight mt-2">
+            සම්බන්ධක පද (Conjunctions Hub)
+          </h2>
+          <p class="text-xs sm:text-sm text-pink-100 mt-2 sinhala-font leading-relaxed font-medium">
+            වචන සහ වාක්‍ය ඛණ්ඩ එකිනෙක සම්බන්ධ කරමින් දීර්ඝ හා අලංකාර ඉංග්‍රීසි වාක්‍ය නිර්මාණය කිරීමට ඉගෙන ගන්න.
+          </p>
+
+          <div class="flex gap-2 mt-3 sm:mt-4 overflow-x-auto pb-1 -mx-2 px-2">
+            <button onclick="filterConjunctionCategory('all')" class="conj-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-black bg-white text-pink-700 shadow-sm" data-conjcat="all">All</button>
+            <button onclick="filterConjunctionCategory('coordinating')" class="conj-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-conjcat="coordinating">Coordinating (FANBOYS)</button>
+            <button onclick="filterConjunctionCategory('subordinating')" class="conj-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white" data-conjcat="subordinating">Subordinating</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="conjunctionsCardsContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"></div>
+
+      <!-- Quiz -->
+      <div class="glass-card p-4 sm:p-7 rounded-3xl border-2 border-pink-300 dark:border-pink-800 shadow-xl space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+          <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-link text-pink-500"></i> Conjunctions අභ්‍යාසය
+          </h3>
+          <span id="conjunctionsScoreBadge" class="text-xs font-black px-2.5 py-1 rounded-xl bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-300">0 / 0</span>
+        </div>
+        <div id="conjunctionsQuizContainer" class="space-y-3.5"></div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7: AI GRAMMAR FIXER ================= -->
+    <section id="section-fixer" class="hidden space-y-4 sm:space-y-6">
+      <div class="glass-card p-4 sm:p-8 rounded-3xl shadow-xl">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-gradient-to-r from-amber-500 to-purple-600 text-white shadow-md">
+            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Diagnostic Doctor
+          </span>
+          <h2 class="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-2">
+            AI Speech & Expression Doctor (වැරදි හඳුනාගැනීම)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 sinhala-font font-medium">
+            ඕනෑම වැරදි හෝ අසම්පූර්ණ ඉංග්‍රීසි වාක්‍යයක් ශබ්ද නගා කියන්න (හෝ ලියන්න). AI ගුරුවරයා එය නිවැරදි කර සිංහලෙන් පහදා දෙයි.
+          </p>
+        </div>
+
+        <div class="mt-4 sm:mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          <div class="p-4 sm:p-6 bg-slate-50/90 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-3xl flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <label class="text-[11px] sm:text-xs font-black uppercase text-slate-500">ඔබේ වාක්‍යය (Speak or Type):</label>
+              <button onclick="toggleFixerVoiceMic()" id="fixerVoiceMicBtn" class="touch-target text-xs px-3 py-1.5 rounded-xl bg-pink-100 text-pink-700 dark:bg-pink-950/60 dark:text-pink-300 border border-pink-300 dark:border-pink-800 flex items-center gap-1.5 font-bold">
+                <i class="fa-solid fa-microphone"></i> <span>Speak</span>
+              </button>
+            </div>
+
+            <textarea id="fixerSentenceInput" rows="3" placeholder="Type or speak a sentence (e.g. 'He did not went to office yesterday...')" 
+                      class="w-full p-3 sm:p-4 bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-slate-700 rounded-2xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium"></textarea>
+
+            <div class="flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5">
+              <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-bold text-slate-400">
+                <span>Try:</span>
+                <button onclick="setSampleFixerSentence('He did not went to office yesterday.')" class="text-pink-600 hover:underline">Sample 1</button>
+                <button onclick="setSampleFixerSentence('I am agree with you.')" class="text-purple-600 hover:underline">Sample 2</button>
+              </div>
+
+              <button onclick="runSentenceAnalysis()" id="analyzeSentenceBtn" class="touch-target px-5 py-2.5 bg-gradient-to-r from-amber-500 via-pink-600 to-purple-600 hover:from-amber-600 text-white rounded-xl text-xs sm:text-sm font-black flex items-center justify-center gap-1.5 shadow-md">
+                <i class="fa-solid fa-bolt text-yellow-300"></i>
+                <span>Diagnose (සිංහලෙන්)</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="fixerOutputContainer" class="p-4 sm:p-6 bg-slate-50/90 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-3xl flex flex-col justify-center min-h-[220px]">
+            <div id="fixerEmptyState" class="text-center py-8 text-slate-400">
+              <i class="fa-solid fa-sparkles text-3xl mb-2 text-purple-400 opacity-60"></i>
+              <p class="text-xs sm:text-sm font-medium sinhala-font">වාක්‍යයක් ඇතුළත් කර 'Diagnose' බොත්තම ඔබන්න.</p>
+            </div>
+
+            <div id="fixerLoadingState" class="hidden flex flex-col items-center justify-center py-8">
+              <div class="w-10 h-10 rounded-full border-4 border-purple-200 border-t-purple-500 animate-spin mb-2"></div>
+              <p class="text-xs font-bold text-purple-600 dark:text-purple-400 sinhala-font">විශ්ලේෂණය කරමින් පවතී...</p>
+            </div>
+
+            <div id="fixerResultCard" class="hidden space-y-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: V1 • V2 • V3 TABLE ================= -->
+    <section id="section-verbtable" class="hidden space-y-4 sm:space-y-6">
+      <div class="glass-card p-4 sm:p-8 rounded-3xl shadow-xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md">
+              <i class="fa-solid fa-table-list mr-1"></i> Irregular Verbs
+            </span>
+            <h2 class="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1.5">
+              Verb Forms: V1 • V2 • V3
+            </h2>
+            <p class="text-xs text-slate-600 dark:text-slate-400 sinhala-font font-medium">
+              කාල නිවැරදිව තැනීමට අවශ්‍ය අත්‍යවශ්‍ය ක්‍රියාපද (Irregular Verbs) සහ සිංහල තේරුම්.
+            </p>
+          </div>
+
+          <div class="relative w-full md:w-72">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-amber-500 text-xs"></i>
+            <input type="text" id="verbSearchBox" oninput="filterVerbTable(this.value)" placeholder="Search verb or සිංහලෙන්..." 
+                   class="w-full pl-9 pr-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm font-bold focus:ring-2 focus:ring-amber-500">
+          </div>
+        </div>
+
+        <!-- Responsive Card List for Mobile & Table for Desktop -->
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 mt-4">
+          <table class="w-full text-left text-xs sm:text-sm min-w-[500px]">
+            <thead class="bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 uppercase tracking-wider font-extrabold border-b border-slate-200 dark:border-slate-700 text-[11px]">
+              <tr>
+                <th class="p-3">Meaning (සිංහල)</th>
+                <th class="p-3 text-emerald-600 dark:text-emerald-400">V1 (Base)</th>
+                <th class="p-3 text-orange-600 dark:text-orange-400">V2 (Past)</th>
+                <th class="p-3 text-purple-600 dark:text-purple-400">V3 (Participle)</th>
+                <th class="p-3 text-cyan-600 dark:text-cyan-400">V-ing</th>
+                <th class="p-3 text-center">Audio</th>
+              </tr>
+            </thead>
+            <tbody id="verbTableBody" class="divide-y divide-slate-100 dark:divide-slate-800 font-semibold"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= VOICE & AUDIO SETTINGS MODAL ================= -->
+  <div id="voiceSettingsModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md z-50 hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="glass-card max-w-lg w-full p-4 sm:p-7 rounded-3xl border-2 border-indigo-300 dark:border-indigo-800 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-pink-500 to-indigo-600 text-white flex items-center justify-center font-bold">
+            <i class="fa-solid fa-microphone-lines text-base"></i>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">D'KANS Voice Customizer</h3>
+            <p class="text-[11px] text-slate-500 sinhala-font font-medium">කටහඬ ස්ත්‍රී/පුරුෂභාවය සහ උච්චාරණ වේගය</p>
+          </div>
+        </div>
+        <button onclick="closeVoiceSettingsModal()" class="touch-target text-slate-400 hover:text-slate-700 dark:hover:text-white p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Quick Gender Choice -->
+      <div>
+        <label class="text-[11px] font-black uppercase text-slate-500 tracking-wider block mb-1.5">Tutor Voice Gender:</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" id="modalGenderBtn-female" onclick="setAppVoiceGender('female')" class="touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-pink-100 dark:bg-pink-950 border-pink-500 text-pink-900 dark:text-pink-200">
+            <span>👩</span> <span>Female (කාන්තා)</span>
+          </button>
+          <button type="button" id="modalGenderBtn-male" onclick="setAppVoiceGender('male')" class="touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+            <span>👨</span> <span>Male (පිරිමි)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- System Voices -->
+      <div>
+        <div class="flex items-center justify-between mb-1">
+          <label class="text-[11px] font-black uppercase text-slate-500 tracking-wider">Installed System Voices:</label>
+          <span id="voiceCountBadge" class="text-[10px] font-bold text-indigo-500 font-mono">Scanning...</span>
+        </div>
+        <select id="systemVoiceDropdown" onchange="onSystemVoiceSelect(this.value)" class="w-full px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-500">
+          <option value="">Default Native Accent (Auto)</option>
+        </select>
+      </div>
+
+      <!-- Speed Slider -->
+      <div>
+        <div class="flex justify-between items-center text-xs font-bold mb-1">
+          <span class="text-slate-700 dark:text-slate-300">Speech Rate / Speed:</span>
+          <span id="voiceSpeedValLabel" class="text-purple-600 dark:text-purple-400 font-mono">0.95x</span>
+        </div>
+        <input type="range" id="voiceSpeedSlider" min="0.6" max="1.3" step="0.05" value="0.95" 
+               oninput="onSpeedSliderChange(this.value)"
+               class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-purple-600">
+      </div>
+
+      <!-- Pitch Slider -->
+      <div>
+        <div class="flex justify-between items-center text-xs font-bold mb-1">
+          <span class="text-slate-700 dark:text-slate-300">Voice Pitch:</span>
+          <span id="voicePitchValLabel" class="text-pink-600 dark:text-pink-400 font-mono">1.15</span>
+        </div>
+        <input type="range" id="voicePitchSlider" min="0.7" max="1.4" step="0.05" value="1.15" 
+               oninput="onPitchSliderChange(this.value)"
+               class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-pink-600">
+      </div>
+
+      <!-- Test Audio & Save Buttons -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center gap-2">
+        <button onclick="testSelectedVoiceAudio()" class="touch-target w-full sm:flex-1 py-2.5 px-3 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-200 hover:bg-purple-200 text-xs font-extrabold flex items-center justify-center gap-2">
+          <i class="fa-solid fa-volume-high"></i> <span>Test Voice</span>
+        </button>
+        <button onclick="saveVoicePreferencesModal()" class="touch-target w-full sm:flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 via-pink-600 to-indigo-600 text-white text-xs font-black shadow-md flex items-center justify-center gap-2">
+          <i class="fa-solid fa-check"></i> <span>Save Voice</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Daily Missions Modal -->
+  <div id="missionsModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-50 hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="glass-card max-w-md w-full p-4 sm:p-6 rounded-3xl border-2 border-amber-300 dark:border-amber-700 shadow-2xl space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-bullseye text-amber-500 text-base"></i>
+          <h3 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">Daily Missions</h3>
+        </div>
+        <button onclick="closeMissionsModal()" class="touch-target text-slate-400 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2.5 text-xs">
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-slate-900 dark:text-white">Complete 3 Shadowing Drills</p>
+            <span class="text-[11px] text-slate-500 sinhala-font">වාක්‍ය 3ක් හඬ අනුකරණය කරන්න</span>
+          </div>
+          <span class="font-black text-amber-500">+50 XP</span>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-slate-900 dark:text-white">Do 1 Situational Dialogue</p>
+            <span class="text-[11px] text-slate-500 sinhala-font">සැබෑ සංවාදයකට එක්වන්න</span>
+          </div>
+          <span class="font-black text-amber-500">+100 XP</span>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeMissionsModal()" class="touch-target px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl text-xs font-bold">Awesome</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="fixed bottom-20 lg:bottom-6 right-3 sm:right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-bold max-w-[90vw]">
+    <i id="toastIconElement" class="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
+    <span id="toastTextElement" class="truncate">Notification</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* Audio Context */
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeepSound(type = 'success') {
+      try {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        const now = audioCtx.currentTime;
+
+        if (type === 'success') {
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === 'xp') {
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.2);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else {
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.exponentialRampToValueAtTime(160, now + 0.15);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        }
+      } catch (e) {}
+    }
+
+    /* Voice Customization Settings */
+    let appVoiceGender = localStorage.getItem('dkans_voice_gender') || 'female';
+    let appVoiceSpeed = parseFloat(localStorage.getItem('dkans_voice_speed') || '0.95');
+    let appVoicePitch = parseFloat(localStorage.getItem('dkans_voice_pitch') || (appVoiceGender === 'female' ? '1.18' : '0.88'));
+    let appSelectedVoiceURI = localStorage.getItem('dkans_voice_uri') || '';
+    let systemAvailableVoices = [];
+
+    function populateSystemVoicesList() {
+      if (!('speechSynthesis' in window)) return;
+      systemAvailableVoices = window.speechSynthesis.getVoices();
+      const dropdown = document.getElementById('systemVoiceDropdown');
+      if (!dropdown) return;
+
+      dropdown.innerHTML = `<option value="">Default Native Accent (Auto)</option>`;
+      const englishVoices = systemAvailableVoices.filter(v => v.lang.startsWith('en'));
+      document.getElementById('voiceCountBadge').textContent = `${englishVoices.length} found`;
+
+      englishVoices.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.voiceURI;
+        opt.selected = v.voiceURI === appSelectedVoiceURI;
+        let tag = '';
+        const nameLower = v.name.toLowerCase();
+        if (nameLower.includes('female') || nameLower.includes('zira') || nameLower.includes('samantha') || nameLower.includes('karen') || nameLower.includes('jenny')) {
+          tag = ' [👩 Female]';
+        } else if (nameLower.includes('male') || nameLower.includes('david') || nameLower.includes('mark') || nameLower.includes('george')) {
+          tag = ' [👨 Male]';
+        }
+        opt.textContent = `${v.name} (${v.lang})${tag}`;
+        dropdown.appendChild(opt);
+      });
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = populateSystemVoicesList;
+      populateSystemVoicesList();
+    }
+
+    function setAppVoiceGender(gender, announce = true) {
+      appVoiceGender = gender;
+      localStorage.setItem('dkans_voice_gender', gender);
+      appVoicePitch = gender === 'female' ? 1.18 : 0.88;
+      localStorage.setItem('dkans_voice_pitch', appVoicePitch.toString());
+
+      updateVoiceUIControls();
+
+      if (announce) {
+        showToastAlert(`Voice set to ${gender === 'female' ? '👩 Female (කාන්තා)' : '👨 Male (පිරිමි)'}`, "success");
+        speakSentence(gender === 'female' ? "Female voice activated." : "Male voice activated.");
+      }
+    }
+
+    function updateVoiceUIControls() {
+      const btnFemale = document.getElementById('voiceGenderBtn-female');
+      const btnMale = document.getElementById('voiceGenderBtn-male');
+      const modalFemale = document.getElementById('modalGenderBtn-female');
+      const modalMale = document.getElementById('modalGenderBtn-male');
+      const roleplayIndicator = document.getElementById('roleplayVoiceIndicatorText');
+
+      if (roleplayIndicator) {
+        roleplayIndicator.textContent = appVoiceGender === 'female' ? 'Female Voice (කාන්තා)' : 'Male Voice (පිරිමි)';
+        roleplayIndicator.className = appVoiceGender === 'female' ? 'font-bold text-pink-500' : 'font-bold text-indigo-500';
+      }
+
+      if (appVoiceGender === 'female') {
+        if (btnFemale) btnFemale.className = "touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black transition-all flex items-center gap-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-sm";
+        if (btnMale) btnMale.className = "touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600";
+        if (modalFemale) modalFemale.className = "touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-pink-100 dark:bg-pink-950 border-pink-500 text-pink-900 dark:text-pink-200";
+        if (modalMale) modalMale.className = "touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300";
+      } else {
+        if (btnMale) btnMale.className = "touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black transition-all flex items-center gap-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-sm";
+        if (btnFemale) btnFemale.className = "touch-target px-2 sm:px-3 py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-pink-600";
+        if (modalMale) modalMale.className = "touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-indigo-100 dark:bg-indigo-950 border-indigo-500 text-indigo-900 dark:text-indigo-200";
+        if (modalFemale) modalFemale.className = "touch-target p-3 rounded-xl border-2 font-bold text-xs flex items-center justify-center gap-1.5 transition bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300";
+      }
+
+      const speedSlider = document.getElementById('voiceSpeedSlider');
+      const pitchSlider = document.getElementById('voicePitchSlider');
+      const speedLabel = document.getElementById('voiceSpeedValLabel');
+      const pitchLabel = document.getElementById('voicePitchValLabel');
+
+      if (speedSlider) speedSlider.value = appVoiceSpeed;
+      if (pitchSlider) pitchSlider.value = appVoicePitch;
+      if (speedLabel) speedLabel.textContent = `${appVoiceSpeed.toFixed(2)}x`;
+      if (pitchLabel) pitchLabel.textContent = `${appVoicePitch.toFixed(2)}`;
+    }
+
+    function openVoiceSettingsModal() {
+      populateSystemVoicesList();
+      updateVoiceUIControls();
+      document.getElementById('voiceSettingsModal').classList.remove('hidden');
+    }
+    function closeVoiceSettingsModal() {
+      document.getElementById('voiceSettingsModal').classList.add('hidden');
+    }
+    function onSystemVoiceSelect(val) {
+      appSelectedVoiceURI = val;
+      localStorage.setItem('dkans_voice_uri', val);
+    }
+    function onSpeedSliderChange(val) {
+      appVoiceSpeed = parseFloat(val);
+      document.getElementById('voiceSpeedValLabel').textContent = `${appVoiceSpeed.toFixed(2)}x`;
+    }
+    function onPitchSliderChange(val) {
+      appVoicePitch = parseFloat(val);
+      document.getElementById('voicePitchValLabel').textContent = `${appVoicePitch.toFixed(2)}`;
+    }
+    function saveVoicePreferencesModal() {
+      localStorage.setItem('dkans_voice_speed', appVoiceSpeed.toString());
+      localStorage.setItem('dkans_voice_pitch', appVoicePitch.toString());
+      closeVoiceSettingsModal();
+      showToastAlert("Settings saved!", "success");
+    }
+    function testSelectedVoiceAudio() {
+      speakSentence("Hello! I am your D'KANS English tutor. Let's practice speaking fluent English together!");
+    }
+
+    /* Core Universal TTS */
+    function speakSentence(text, overrideRate = null) {
+      if (!('speechSynthesis' in window)) {
+        showToastAlert("Speech synthesis not supported in this browser.", "info");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = overrideRate || appVoiceSpeed;
+      utterance.pitch = appVoicePitch;
+      utterance.lang = 'en-US';
+
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        if (appSelectedVoiceURI) {
+          const matched = voices.find(v => v.voiceURI === appSelectedVoiceURI);
+          if (matched) utterance.voice = matched;
+        }
+
+        if (!utterance.voice) {
+          const englishVoices = voices.filter(v => v.lang.startsWith('en'));
+          if (appVoiceGender === 'female') {
+            const femaleMatch = englishVoices.find(v => {
+              const n = v.name.toLowerCase();
+              return n.includes('female') || n.includes('zira') || n.includes('samantha') || n.includes('karen') || n.includes('jenny');
+            });
+            if (femaleMatch) utterance.voice = femaleMatch;
+            else if (englishVoices.length > 0) utterance.voice = englishVoices[0];
+          } else {
+            const maleMatch = englishVoices.find(v => {
+              const n = v.name.toLowerCase();
+              return n.includes('male') || n.includes('david') || n.includes('mark') || n.includes('george');
+            });
+            if (maleMatch) utterance.voice = maleMatch;
+            else if (englishVoices.length > 0) utterance.voice = englishVoices[englishVoices.length - 1];
+          }
+        }
+      }
+      window.speechSynthesis.speak(utterance);
+    }
+
+    /* Databases */
+    const SHADOWING_DRILLS = [
+      {
+        id: "shad-1",
+        category: "Polite Request",
+        english: "I was wondering if you could help me for a moment.",
+        sinhala: "ඔබට මොහොතකට මට උදව් කළ හැකිදැයි මා කල්පනා කළෙමි.",
+        tip: "'I was wondering if you' එක දිගට ශබ්ද වන්නේ 'I-wz-wondering-if-ya' ලෙසය. වචන අතර විරාම නොතබා එක හුස්මට කියන්න."
+      },
+      {
+        id: "shad-2",
+        category: "Agreement",
+        english: "That sounds like a great idea to me.",
+        sinhala: "මට නම් ඒක ඉතාම හොඳ අදහසක් වගේ පෙනෙනවා.",
+        tip: "'That sounds like a' එකට යා වී 'That-soundz-ly-kuh' ලෙස කථා කෙරේ."
+      },
+      {
+        id: "shad-3",
+        category: "Reassurance",
+        english: "Don't worry about it, I'll take care of everything.",
+        sinhala: "ඒ ගැන කරදර වෙන්න එපා, මම සියල්ල බලාගන්නම්.",
+        tip: "'Don't worry about it' හි 'about it' කොටස 'uh-bow-dit' ලෙස එකිනෙක සම්බන්ධ වේ."
+      },
+      {
+        id: "shad-4",
+        category: "Workplace",
+        english: "Could you please give me a hand with this report?",
+        sinhala: "කරුණාකර මේ වාර්තාව සමඟ මට සහායක් ලබාදිය හැකිද?",
+        tip: "'Give me' ස්වදේශිකයන් බොහෝවිට 'Gimme-a-hand' ලෙස පවසති."
+      },
+      {
+        id: "shad-5",
+        category: "Opinion",
+        english: "As far as I know, the meeting has been postponed.",
+        sinhala: "මා දන්නා තරමින් රැස්වීම කල් දමා ඇත.",
+        tip: "'As far as I' සම්බන්ධ වන්නේ 'Az-fah-rah-zy' ලෙසය."
+      },
+      {
+        id: "shad-6",
+        category: "Casual Talk",
+        english: "What are you going to do after work today?",
+        sinhala: "ඔබ අද වැඩ නිමවීමෙන් පසු කුමක් කරන්නද යන්නේ?",
+        tip: "'What are you going to do' සාමාන්‍යයෙන් 'Whatcha gonna do' ලෙස ලඝු කරති."
+      }
+    ];
+
+    const CONVERSATIONAL_CHUNKS = [
+      {
+        category: "requests",
+        chunk: "Could you please...",
+        meaningSi: "කරුණාකර ඔබට පුළුවන්ද...",
+        example: "Could you please check this document?",
+        exampleSi: "කරුණාකර ඔබට මේ ලියවිල්ල පරීක්ෂා කළ හැකිද?",
+        tip: "Can you වෙනුවට Could you යෙදීමෙන් වාක්‍යය 100% ක් ආචාරශීලී වේ."
+      },
+      {
+        category: "requests",
+        chunk: "Would you mind...",
+        meaningSi: "ඔබ අකමැති නොවන්නේ නම්...",
+        example: "Would you mind closing the door?",
+        exampleSi: "කරුණාකර දොර වසා දැමිය හැකිද?",
+        tip: "'Would you mind' පසු හැමවිටම ක්‍රියාපදයට -ing (closing) එකතු වේ."
+      },
+      {
+        category: "opinions",
+        chunk: "In my opinion...",
+        meaningSi: "මගේ අදහස අනුව නම්...",
+        example: "In my opinion, we should wait until tomorrow.",
+        exampleSi: "මගේ අදහස අනුව අප හෙට වන තුරු සිටිය යුතුය.",
+        tip: "අදහස් ප්‍රකාශ කිරීමේදී ඍජුවම ආරම්භ කිරීමට යොදාගත හැකි සුලභම chunk එකකි."
+      },
+      {
+        category: "opinions",
+        chunk: "As far as I'm concerned...",
+        meaningSi: "මා සිතන ආකාරයට නම්...",
+        example: "As far as I'm concerned, the price is reasonable.",
+        exampleSi: "මා සිතන ආකාරයට නම් මෙම මිල සාධාරණයි.",
+        tip: "වෘත්තීය රැස්වීම්වලදී බහුලව භාවිත වේ."
+      },
+      {
+        category: "disagreement",
+        chunk: "I see your point, but...",
+        meaningSi: "ඔබ කියන දේ මට තේරෙනවා, නමුත්...",
+        example: "I see your point, but we don't have enough budget.",
+        exampleSi: "ඔබ කියන දේ මට තේරෙනවා, නමුත් අප සතුව ප්‍රමාණවත් අයවැයක් නැත.",
+        tip: "විරුද්ධ අදහසක් මෘදුව ප්‍රකාශ කිරීමට."
+      },
+      {
+        category: "daily",
+        chunk: "To be honest...",
+        meaningSi: "ඇත්තම කියනවා නම්...",
+        example: "To be honest, I am completely exhausted.",
+        exampleSi: "ඇත්තම කියනවා නම් මට දැඩි ලෙස වෙහෙසයි.",
+        tip: "දෛනික කතාබහේදී අවංක හැඟීමක් දැක්වීමට."
+      }
+    ];
+
+    const SITUATIONAL_SCENARIOS = {
+      job_interview: {
+        title: "Job Interview (රැකියා සම්මුඛ පරීක්ෂණය)",
+        interviewer: "Mr. David (HR Director)",
+        introEn: "Good morning! Thanks for coming in. Could you tell me a little about your professional background?",
+        introSi: "සුබ උදෑසනක්! ඔබගේ වෘත්තීය පසුබිම ගැන කෙටියෙන් හඳුන්වා දිය හැකිද?",
+        overview: "සම්මුඛ පරීක්ෂකවරයා ඔබගේ අත්දැකීම් විමසයි. සරලව පිළිතුරු දෙන්න.",
+        starters: [
+          { en: "Good morning! I have over three years of experience in customer support.", si: "සුබ උදෑසනක්! මට පාරිභෝගික සේවාවේ වසර 3ක පළපුරුද්දක් ඇත." },
+          { en: "I am a quick learner and enjoy collaborating with diverse teams.", si: "මම ඉක්මනින් ඉගෙන ගන්නා, කණ්ඩායම් සමඟ වැඩ කිරීමට කැමති අයෙක්මි." }
+        ]
+      },
+      airport_hotel: {
+        title: "Airport & Hotel Check-in",
+        interviewer: "Front Desk Officer",
+        introEn: "Good afternoon! Welcome to Grand Palace Hotel. How may I assist with your stay today?",
+        introSi: "සුබ දහවලක්! හෝටලයට සාදරයෙන් පිළිගන්නවා. මම ඔබට කෙසේද සහාය විය හැක්කේ?",
+        overview: "කාමර වෙන්කරවා ගැනීම් තහවුරු කිරීම සහ විස්තර විමසීම.",
+        starters: [
+          { en: "Hi, I have a reservation under the name Perera for two nights.", si: "මා පෙරේරා නමින් රාත්‍රී දෙකක් සඳහා කාමරයක් වෙන්කර ඇත." }
+        ]
+      },
+      supermarket: {
+        title: "Supermarket & Shopping",
+        interviewer: "Store Assistant",
+        introEn: "Hello there! Are you finding everything you need today, or would you like a hand?",
+        introSi: "හෙලෝ! ඔබට අවශ්‍ය සියල්ල සොයා ගැනීමට හැකි වුණාද?",
+        overview: "භාණ්ඩ ඇති ස්ථාන සහ ගෙවීම් විමසීම.",
+        starters: [
+          { en: "Excuse me, which aisle can I find olive oil?", si: "සමාවන්න, ඔලිව් තෙල් ඇත්තේ කුමන පෙළේද?" }
+        ]
+      },
+      doctor_visit: {
+        title: "Doctor Appointment",
+        interviewer: "Dr. Watson",
+        introEn: "Good morning. Please have a seat. What symptoms have you been experiencing lately?",
+        introSi: "සුබ උදෑසනක්. වාඩිවන්න. ඔබට ඇති අපහසුතා මොනවාද?",
+        overview: "හිසරදය, උණ හෝ අසනීප තත්වයන් විස්තර කිරීම.",
+        starters: [
+          { en: "I've had a severe headache and fever for the past two days.", si: "පසුගිය දින දෙකක සිට මට තද හිසරදයක් සහ උණක් තිබේ." }
+        ]
+      },
+      daily_chitchat: {
+        title: "Casual Coffee Talk",
+        interviewer: "Alex (Friend)",
+        introEn: "Hey buddy! Great to see you. How has your week been going so far?",
+        introSi: "හායි යාලුවා! ඔබව දැකීම සතුටක්. මේ සතිය කොහොමද?",
+        overview: "මිත්‍රශීලී සැහැල්ලු කතාබහ.",
+        starters: [
+          { en: "I've been quite busy with work, but doing great!", si: "මම වැඩත් එක්ක ටිකක් කාර්යබහුල වුණා, ඒත් හොඳින් ඉන්නවා!" }
+        ]
+      },
+      software_standup: {
+        title: "IT Project Standup",
+        interviewer: "Scrum Master",
+        introEn: "Good morning team! Let's get started. What did you work on yesterday and any blockers?",
+        introSi: "සුබ උදෑසනක්! ඊයේ ඔබ කළ වැඩ මොනවාද? කිසියම් බාධාවක් තිබේද?",
+        overview: "කාර්යයන් සම්පූර්ණ කිරීම සහ සැලසුම් පැහැදිලි කිරීම.",
+        starters: [
+          { en: "Yesterday I completed the user authentication API. No blockers.", si: "ඊයේ මම පරිශීලක සත්‍යාපන API එක සම්පූර්ණ කළා. බාධාවන් නැහැ." }
+        ]
+      }
+    };
+
+    const COMPREHENSIVE_TENSES = [
+      {
+        id: "simple-present",
+        name: "Simple Present Tense",
+        sinhalaName: "සරල වර්තමාන කාලය",
+        category: "present",
+        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "දෛනික පුරුදු (Habits) සහ ස්වභාවික සත්‍යයන්",
+        explanation: `දෛනික පුරුදු (Habits), නිතිපතා කරන කාර්යයන් (Routines), විශ්ව සත්‍යයන් (Universal Truths) ප්‍රකාශ කිරීමට භාවිතා වේ.\n• He, She, It සමඟ ක්‍රියාපදයට 's' හෝ 'es' එකතු වේ.\n• I, We, You, They සමඟ මූලික ක්‍රියාපදය (V1) පමණි.`,
+        affirmativeFormula: "Subject + V1 (s/es) + Object",
+        negativeFormula: "Subject + do/does not + V1 + Object",
+        questionFormula: "Do/Does + Subject + V1 + Object?",
+        affirmativeDesc: "කතෘ + V1 (s/es සමඟ) + කර්මය",
+        negativeDesc: "කතෘ + do/does not + V1",
+        questionDesc: "Do / Does + කතෘ + V1?",
+        timeMarkers: [{ en: "Every day", si: "සෑම දිනකම" }, { en: "Always", si: "සෑම විටම" }],
+        examples: [
+          { type: "positive", english: "She speaks English fluently.", sinhala: "ඇය චතුර ලෙස ඉංග්‍රීසි කතා කරයි.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80", tag: "Affirmative" },
+          { type: "negative", english: "He does not eat spicy food.", sinhala: "ඔහු සැර කෑම කන්නේ නැත.", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", tag: "Negative" }
+        ],
+        quiz: [
+          {
+            q: "Kasun _______ football every weekend.",
+            hint: "කසුන් සෑම සති අන්තයකම පාපන්දු ක්‍රීඩා කරයි.",
+            options: ["plays", "play", "playing", "is play"],
+            correct: 0,
+            sinhalaReason: "Kasun යනු ඒකවචන (He) බැවින් ක්‍රියාපදයට 's' එකතු වී 'plays' විය යුතුය."
+          }
+        ]
+      },
+      {
+        id: "present-continuous",
+        name: "Present Continuous",
+        sinhalaName: "වර්තමාන අඛණ්ඩ කාලය",
+        category: "present",
+        heroImage: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "මේ මොහොතේ සිදුවෙමින් පවතින ක්‍රියා",
+        explanation: `මේ මොහොතේ සිදුවෙමින් පවතින ක්‍රියාවන් දැක්වීමට.\nරීතිය: Subject + am/is/are + V1-ing`,
+        affirmativeFormula: "Subject + am/is/are + V1-ing + Object",
+        negativeFormula: "Subject + am/is/are not + V1-ing + Object",
+        questionFormula: "Am/Is/Are + Subject + V1-ing + Object?",
+        affirmativeDesc: "කතෘ + am/is/are + V1-ing + කර්මය",
+        negativeDesc: "කතෘ + am/is/are not + V1-ing",
+        questionDesc: "Am/Is/Are + කතෘ + V1-ing?",
+        timeMarkers: [{ en: "Right now", si: "මේ දැන්" }, { en: "At the moment", si: "මේ මොහොතේ" }],
+        examples: [
+          { type: "positive", english: "It is raining heavily right now.", sinhala: "මේ මොහොතේ තදින් වැස්ස වසිමින් පවතී.", image: "https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=400&q=80", tag: "Ongoing" }
+        ],
+        quiz: [
+          {
+            q: "The train _______ into the station right now.",
+            hint: "දුම්රිය මේ මොහොතේ පැමිණෙමින් පවතී.",
+            options: ["comes", "is coming", "are coming", "came"],
+            correct: 1,
+            sinhalaReason: "'The train' ඒකවචන බැවින් 'is coming' නිවැරදිය."
+          }
+        ]
+      },
+      {
+        id: "present-perfect",
+        name: "Present Perfect Tense",
+        sinhalaName: "වර්තමාන පරිපූර්ණ කාලය",
+        category: "present",
+        heroImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීතයේ නිම වූ, බලපෑම වර්තමානයට අදාළ ක්‍රියා",
+        explanation: `අතීතයේදී සිදුවී අවසන් වූ, නමුදු එහි බලපෑම වර්තමානයට අදාළ වන සිදුවීම් දැක්වීමට.\nරීතිය: have/has + V3`,
+        affirmativeFormula: "Subject + have/has + V3 + Object",
+        negativeFormula: "Subject + have/has not + V3 + Object",
+        questionFormula: "Have/Has + Subject + V3 + Object?",
+        affirmativeDesc: "කතෘ + have/has + V3 + කර්මය",
+        negativeDesc: "කතෘ + have/has not + V3",
+        questionDesc: "Have/Has + කතෘ + V3?",
+        timeMarkers: [{ en: "Already", si: "දැනටමත්" }, { en: "Just", si: "මේ දැන්" }],
+        examples: [
+          { type: "positive", english: "I have completed all my tasks.", sinhala: "මම මගේ සියලු වැඩ අවසන් කර ඇත්තෙමි.", image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80", tag: "Completed" }
+        ],
+        quiz: [
+          {
+            q: "She _______ just arrived at the airport.",
+            hint: "ඇය මේ දැන් ගුවන් තොටුපළට පැමිණියාය.",
+            options: ["have", "has", "is", "did"],
+            correct: 1,
+            sinhalaReason: "'She' ඒකවචන බැවින් 'has' + V3 (arrived) නිවැරදිය."
+          }
+        ]
+      },
+      {
+        id: "present-perfect-continuous",
+        name: "Present Perfect Continuous",
+        sinhalaName: "වර්තමාන පරිපූර්ණ අඛණ්ඩ කාලය",
+        category: "present",
+        heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීතයේ සිට නොකඩවා මේ දක්වා සිදුවන ක්‍රියා",
+        explanation: `අතීතයේදී ආරම්භ වී, නොකඩවා මේ දක්වාම සිදුවෙමින් පවතින ක්‍රියා.\nරීතිය: have been / has been + V1-ing`,
+        affirmativeFormula: "Subject + have/has been + V1-ing + (since/for)",
+        negativeFormula: "Subject + have/has not been + V1-ing",
+        questionFormula: "Have/Has + Subject + been + V1-ing?",
+        affirmativeDesc: "කතෘ + have/has been + V1-ing",
+        negativeDesc: "කතෘ + have/has not been + V1-ing",
+        questionDesc: "Have/Has + කතෘ + been + V1-ing?",
+        timeMarkers: [{ en: "For 3 hours", si: "පැය තුනක් තිස්සේ" }],
+        examples: [
+          { type: "positive", english: "He has been coding for five hours.", sinhala: "ඔහු පැය පහක් තිස්සේ කේතනය කරමින් සිටී.", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80", tag: "Duration" }
+        ],
+        quiz: [
+          {
+            q: "We have been _______ English for six months.",
+            hint: "අප මාස 6ක් තිස්සේ ඉගෙන ගනිමින් සිටිමු.",
+            options: ["learn", "learned", "learning", "learns"],
+            correct: 2,
+            sinhalaReason: "'have been' පසු V1-ing (learning) ආකාරය යෙදිය යුතුය."
+          }
+        ]
+      },
+      {
+        id: "simple-past",
+        name: "Simple Past Tense",
+        sinhalaName: "සරල අතීත කාලය",
+        category: "past",
+        heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීතයේ සිදුවී නිම වූ ක්‍රියා",
+        explanation: `අතීතයේදී සම්පූර්ණයෙන්ම සිදුවී නිම වූ ක්‍රියා.\nසාමාන්‍ය වාක්‍ය සඳහා V2 (Past form) යෙදේ. Negative වලදී 'did not + V1' යෙදේ.`,
+        affirmativeFormula: "Subject + V2 + Object",
+        negativeFormula: "Subject + did not + V1 + Object",
+        questionFormula: "Did + Subject + V1 + Object?",
+        affirmativeDesc: "කතෘ + අතීත ක්‍රියාපදය (V2) + කර්මය",
+        negativeDesc: "කතෘ + did not + මුල් ක්‍රියාපදය (V1)",
+        questionDesc: "Did + කතෘ + V1?",
+        timeMarkers: [{ en: "Yesterday", si: "ඊයේ" }, { en: "Last year", si: "ගිය වසරේ" }],
+        examples: [
+          { type: "positive", english: "We visited Sigiriya last weekend.", sinhala: "අපි පසුගිය සති අන්තයේ සීගිරිය නැරඹීමට ගියෙමු.", image: "https://images.unsplash.com/photo-1588598198321-9735fd52455b?auto=format&fit=crop&w=400&q=80", tag: "Past Event" }
+        ],
+        quiz: [
+          {
+            q: "They _______ a new house last month.",
+            hint: "ඔවුන් පසුගිය මාසයේ නිවසක් මිලදී ගත්හ.",
+            options: ["buy", "bought", "buying", "buys"],
+            correct: 1,
+            sinhalaReason: "'Last month' නිසා buy හි අතීත කාලය (V2) වන 'bought' යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "past-continuous",
+        name: "Past Continuous",
+        sinhalaName: "අතීත අඛණ්ඩ කාලය",
+        category: "past",
+        heroImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීතයේ සිදුවෙමින් තිබූ ක්‍රියා",
+        explanation: `අතීතයේ කිසියම් නිශ්චිත වේලාවක සිදුවෙමින් තිබූ ක්‍රියාවක් දැක්වීමට.\nරීතිය: was/were + V1-ing`,
+        affirmativeFormula: "Subject + was/were + V1-ing + Object",
+        negativeFormula: "Subject + was/were not + V1-ing + Object",
+        questionFormula: "Was/Were + Subject + V1-ing + Object?",
+        affirmativeDesc: "කතෘ + was/were + V1-ing",
+        negativeDesc: "කතෘ + was/were not + V1-ing",
+        questionDesc: "Was/Were + කතෘ + V1-ing?",
+        timeMarkers: [{ en: "While", si: "අතරතුර" }],
+        examples: [
+          { type: "positive", english: "I was reading when power went off.", sinhala: "විදුලිය විසන්ධි වන විට මා කියවමින් සිටියෙමි.", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80", tag: "Past Continuous" }
+        ],
+        quiz: [
+          {
+            q: "While we _______ for the bus, it began to rain.",
+            hint: "අප බස් රථය එනතුරු බලා සිටියදී වැසි වැටුණි.",
+            options: ["was waiting", "were waiting", "waited", "waiting"],
+            correct: 1,
+            sinhalaReason: "'We' බහුවචන බැවින් 'were waiting' යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "past-perfect",
+        name: "Past Perfect Tense",
+        sinhalaName: "අතීත පරිපූර්ණ කාලය",
+        category: "past",
+        heroImage: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීත සිදුවීම් දෙකකින් පළමුව සිදු වූ ක්‍රියාව",
+        explanation: `අතීතයේ සිදුවීම් දෙකකින් පළමුව සිදුවී අවසන් වූ ක්‍රියාව.\nරීතිය: Subject + had + V3`,
+        affirmativeFormula: "Subject + had + V3 + Object",
+        negativeFormula: "Subject + had not + V3 + Object",
+        questionFormula: "Had + Subject + V3 + Object?",
+        affirmativeDesc: "කතෘ + had + V3",
+        negativeDesc: "කතෘ + had not + V3",
+        questionDesc: "Had + කතෘ + V3?",
+        timeMarkers: [{ en: "Before", si: "පෙර" }],
+        examples: [
+          { type: "positive", english: "The train had left before we arrived.", sinhala: "අප පැමිණීමට පෙර දුම්රිය පිටත්ව ගොස් තිබුණි.", image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=400&q=80", tag: "Earlier Past" }
+        ],
+        quiz: [
+          {
+            q: "The movie had already _______ before we arrived.",
+            hint: "චිත්‍රපටය දැනටමත් ආරම්භ වී තිබුණි.",
+            options: ["start", "started", "starting", "starts"],
+            correct: 1,
+            sinhalaReason: "'had already' පසු V3 (started) යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "past-perfect-continuous",
+        name: "Past Perfect Continuous",
+        sinhalaName: "අතීත පරිපූර්ණ අඛණ්ඩ කාලය",
+        category: "past",
+        heroImage: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අතීතයේ සිදුවීමකට පෙර අඛණ්ඩව කළ ක්‍රියා",
+        explanation: `අතීතයේ සිදුවීමට පෙර යම් කාලයක් තිස්සේ කරමින් තිබූ ක්‍රියා.\nරීතිය: had been + V1-ing`,
+        affirmativeFormula: "Subject + had been + V1-ing + Object",
+        negativeFormula: "Subject + had not been + V1-ing + Object",
+        questionFormula: "Had + Subject + been + V1-ing?",
+        affirmativeDesc: "කතෘ + had been + V1-ing",
+        negativeDesc: "කතෘ + had not been + V1-ing",
+        questionDesc: "Had + කතෘ + been + V1-ing?",
+        timeMarkers: [{ en: "For two hours", si: "පැය දෙකක් තිස්සේ" }],
+        examples: [
+          { type: "positive", english: "He had been driving for hours.", sinhala: "ඔහු පැය ගණනාවක් තිස්සේ රිය පදවමින් සිටියේය.", image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=400&q=80", tag: "Duration" }
+        ],
+        quiz: [
+          {
+            q: "She was tired because she had been _______ all day.",
+            hint: "දවස පුරා වැඩ කරමින් සිටි නිසා ඇය වෙහෙසී සිටියාය.",
+            options: ["working", "worked", "work", "works"],
+            correct: 0,
+            sinhalaReason: "'had been' පසු V1-ing (working) යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "simple-future",
+        name: "Simple Future Tense",
+        sinhalaName: "සරල අනාගත කාලය",
+        category: "future",
+        heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අනාගතයේ සිදුවීමට නියමිත ක්‍රියා",
+        explanation: `අනාගතයේ සිදුවීමට නියමිත ක්‍රියා හෝ තීරණ ප්‍රකාශ කිරීමට.\nරීතිය: Subject + will + V1 (Base verb)`,
+        affirmativeFormula: "Subject + will + V1 + Object",
+        negativeFormula: "Subject + will not (won't) + V1 + Object",
+        questionFormula: "Will + Subject + V1 + Object?",
+        affirmativeDesc: "කතෘ + will + V1 + කර්මය",
+        negativeDesc: "කතෘ + will not + V1",
+        questionDesc: "Will + කතෘ + V1?",
+        timeMarkers: [{ en: "Tomorrow", si: "හෙට" }, { en: "Next week", si: "ලබන සතියේ" }],
+        examples: [
+          { type: "positive", english: "I will call you tomorrow morning.", sinhala: "මම හෙට උදෑසන ඔබට ඇමතුමක් දෙන්නෙමි.", image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=400&q=80", tag: "Promise" }
+        ],
+        quiz: [
+          {
+            q: "I promise I _______ help you tomorrow.",
+            hint: "මම හෙට උදව් කරන බවට පොරොන්දු වෙමි.",
+            options: ["will", "am", "was", "did"],
+            correct: 0,
+            sinhalaReason: "අනාගත පොරොන්දුව සඳහා 'will + V1' යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "future-continuous",
+        name: "Future Continuous",
+        sinhalaName: "අනාගත අඛණ්ඩ කාලය",
+        category: "future",
+        heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අනාගතයේ යම් වේලාවක සිදුවෙමින් පවතින ක්‍රියා",
+        explanation: `අනාගතයේ නිශ්චිත වේලාවක සිදුවෙමින් පවතිනු ඇති ක්‍රියා.\nරීතිය: will be + V1-ing`,
+        affirmativeFormula: "Subject + will be + V1-ing + Object",
+        negativeFormula: "Subject + will not be + V1-ing + Object",
+        questionFormula: "Will + Subject + be + V1-ing?",
+        affirmativeDesc: "කතෘ + will be + V1-ing",
+        negativeDesc: "කතෘ + will not be + V1-ing",
+        questionDesc: "Will + කතෘ + be + V1-ing?",
+        timeMarkers: [{ en: "This time tomorrow", si: "හෙට මේ වෙලාවට" }],
+        examples: [
+          { type: "positive", english: "I will be flying to London tomorrow.", sinhala: "හෙට මේ වෙලාවට මා පියාසර කරමින් සිටිනු ඇත.", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80", tag: "Future Ongoing" }
+        ],
+        quiz: [
+          {
+            q: "Tonight at 8 PM, they will be _______ dinner.",
+            hint: "අද රෑ 8ට ඔවුන් ආහාර ගනිමින් සිටිනු ඇත.",
+            options: ["having", "have", "had", "has"],
+            correct: 0,
+            sinhalaReason: "'will be' පසු V1-ing (having) යෙදිය යුතුය."
+          }
+        ]
+      },
+      {
+        id: "future-perfect",
+        name: "Future Perfect Tense",
+        sinhalaName: "අනාගත පරිපූර්ණ කාලය",
+        category: "future",
+        heroImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අනාගත දිනයක් වන විට නිම වී තිබෙන ක්‍රියා",
+        explanation: `අනාගතයේ නිශ්චිත දිනයක් වන විට සම්පූර්ණයෙන්ම නිම වී තිබෙනු ඇති ක්‍රියා.\nරීතිය: Subject + will have + V3`,
+        affirmativeFormula: "Subject + will have + V3 + Object",
+        negativeFormula: "Subject + will not have + V3 + Object",
+        questionFormula: "Will + Subject + have + V3 + Object?",
+        affirmativeDesc: "කතෘ + will have + V3",
+        negativeDesc: "කතෘ + will not have + V3",
+        questionDesc: "Will + කතෘ + have + V3?",
+        timeMarkers: [{ en: "By next year", si: "ලබන වසර වන විට" }],
+        examples: [
+          { type: "positive", english: "I will have finished my degree by next year.", sinhala: "ලබන වසර වන විට මා උපාධිය සම්පූර්ණ කර අවසන් කර තිබෙනු ඇත.", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80", tag: "Milestone" }
+        ],
+        quiz: [
+          {
+            q: "By Friday, they will have _______ the building.",
+            hint: "සිකුරාදා වන විට ගොඩනැගිල්ල නිම කර තිබෙනු ඇත.",
+            options: ["completed", "complete", "completing", "completes"],
+            correct: 0,
+            sinhalaReason: "'will have' පසු V3 (completed) යෙදේ."
+          }
+        ]
+      },
+      {
+        id: "future-perfect-continuous",
+        name: "Future Perfect Continuous",
+        sinhalaName: "අනාගත පරිපූර්ණ අඛණ්ඩ කාලය",
+        category: "future",
+        heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+        heroCaption: "අනාගත ලක්ෂ්‍යයක් දක්වාම අඛණ්ඩව සිදුවන ක්‍රියා",
+        explanation: `අනාගත ලක්ෂ්‍යයක් වන තුරුම යම් ක්‍රියාවක් කොපමණ කාලයක් සිදුවෙමින් පවතිනු ඇත්දැයි දැක්වීමට.\nරීතිය: will have been + V1-ing`,
+        affirmativeFormula: "Subject + will have been + V1-ing + Object",
+        negativeFormula: "Subject + will not have been + V1-ing + Object",
+        questionFormula: "Will + Subject + have been + V1-ing?",
+        affirmativeDesc: "කතෘ + will have been + V1-ing",
+        negativeDesc: "කතෘ + will not have been + V1-ing",
+        questionDesc: "Will + කතෘ + have been + V1-ing?",
+        timeMarkers: [{ en: "For 3 years by next month", si: "ලබන මාසය වන විට වසර 3ක් තිස්සේ" }],
+        examples: [
+          { type: "positive", english: "I will have been working here for 3 years.", sinhala: "මා මෙහි සේවය කරමින් සිටින කාලය වසර 3ක් වනු ඇත.", image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400&q=80", tag: "Duration" }
+        ],
+        quiz: [
+          {
+            q: "Next year, she will have been _______ here for 5 years.",
+            hint: "ඇය මෙහි වසර 5ක් ජීවත් වෙමින් සිටිනු ඇත.",
+            options: ["living", "live", "lived", "lives"],
+            correct: 0,
+            sinhalaReason: "'will have been' පසු V1-ing (living) යෙදේ."
+          }
+        ]
+      }
+    ];
+
+    const HELPING_WORDS_DB = [
+      {
+        category: "be",
+        title: "Be Verbs (am, is, are, was, were)",
+        sinhalaTitle: "'Be' ක්‍රියා පද (පැවතීම හෝ සිදුවෙමින් පැවතීම)",
+        formula: "Subject + am/is/are/was/were + (V-ing / Adj)",
+        usageSinhala: "වර්තමාන හා අතීත අඛණ්ඩ ක්‍රියා සහ තත්වය දැක්වීමට යෙදේ.",
+        words: [
+          { word: "am", usage: "I සමඟ", example: "I am ready.", si: "මම සූදානම්ව සිටිමි." },
+          { word: "is", usage: "He, She, It සමඟ", example: "She is writing.", si: "ඇය ලියමින් සිටී." },
+          { word: "are", usage: "We, You, They සමඟ", example: "They are happy.", si: "ඔවුන් සතුටින් සිටිති." },
+          { word: "was", usage: "I, He, She, It (Past)", example: "He was driving.", si: "ඔහු රිය පදවමින් සිටියේය." },
+          { word: "were", usage: "We, You, They (Past)", example: "We were waiting.", si: "අපි බලා සිටියෙමු." }
+        ]
+      },
+      {
+        category: "do",
+        title: "Do Verbs (do, does, did)",
+        sinhalaTitle: "'Do' ක්‍රියා පද (ප්‍රශ්න සහ Negative)",
+        formula: "Do/Does/Did + Subject + V1?",
+        usageSinhala: "Simple Present සහ Past වල ප්‍රශ්න සහ negative තැනීමට යෙදේ.",
+        words: [
+          { word: "do / don't", usage: "I, We, You, They", example: "I do not know.", si: "මම නොදනිමි." },
+          { word: "does / doesn't", usage: "He, She, It", example: "Does he speak English?", si: "ඔහු ඉංග්‍රීසි කතා කරනවාද?" },
+          { word: "did / didn't", usage: "Past for all", example: "She did not come.", si: "ඇය පැමිණියේ නැත." }
+        ]
+      },
+      {
+        category: "modal",
+        title: "Can / Could (හැකියාව & ඉල්ලීම්)",
+        sinhalaTitle: "පුළුවන් / හැකි විය / කාරුණික ඉල්ලීම්",
+        formula: "Subject + can/could + V1",
+        usageSinhala: "හැකියාව හෝ ආචාරශීලී ඉල්ලීමක් දැක්වීමට. Modal පසු V1 යෙදේ.",
+        words: [
+          { word: "can", usage: "වර්තමාන හැකියාව", example: "I can speak English.", si: "මට ඉංග්‍රීසි කතා කළ හැකිය." },
+          { word: "could", usage: "කාරුණික ඉල්ලීම", example: "Could you please help me?", si: "කරුණාකර මට උදව් කළ හැකිද?" }
+        ]
+      }
+    ];
+
+    const HELPING_WORDS_QUIZ = [
+      {
+        q: "She _______ not like drinking cold water in the morning.",
+        hint: "ඇය උදෑසන සීතල වතුර බීමට කැමති නැත.",
+        options: ["does", "do", "is", "have"],
+        correct: 0,
+        sinhalaReason: "'She' ඒකවචන බැවින් negative සඳහා 'does not' යෙදේ."
+      },
+      {
+        q: "You look sick. You _______ see a doctor.",
+        hint: "ඔබ වෛද්‍යවරයකු හමුවිය යුතුය.",
+        options: ["should", "did", "are", "have"],
+        correct: 0,
+        sinhalaReason: "හිතවත් උපදෙසක් (advice) සඳහා 'should + V1' යෙදේ."
+      }
+    ];
+
+    const CONJUNCTIONS_DB = [
+      {
+        category: "coordinating",
+        title: "Coordinating (FANBOYS)",
+        sinhalaTitle: "සමාන තරාතිරමේ වාක්‍ය සම්බන්ධ කිරීම",
+        image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80",
+        badge: "FANBOYS",
+        formula: "Clause 1 + , + Conjunction + Clause 2",
+        examples: [
+          { word: "and", en: "She loves reading and writing.", si: "ඇය කියවීමට සහ ලිවීමට කැමතියි." },
+          { word: "but", en: "He studied hard, but he failed.", si: "ඔහු පාඩම් කළේය, නමුත් අසමත් විය." }
+        ]
+      },
+      {
+        category: "subordinating",
+        title: "Subordinating (Because, Although)",
+        sinhalaTitle: "හේතුව හෝ කොන්දේසිය දැක්වීම",
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+        badge: "Cause & Condition",
+        formula: "Conjunction + Clause, + Main Clause",
+        examples: [
+          { word: "because", en: "I stayed home because it rained.", si: "වැස්ස නිසා මම ගෙදර නැවතුණෙමි." },
+          { word: "although", en: "Although it was late, they walked.", si: "ප්‍රමාද වුවද ඔවුන් ඇවිද ගියහ." }
+        ]
+      }
+    ];
+
+    const CONJUNCTIONS_QUIZ = [
+      {
+        q: "He wanted to buy the phone, _______ he had no money.",
+        hint: "ඔහුට දුරකථනය ගැනීමට අවශ්‍ය විය, නමුත් මුදල් තිබුණේ නැත.",
+        options: ["but", "so", "because", "and"],
+        correct: 0,
+        sinhalaReason: "ප්‍රතිවිරුද්ධ අදහස් දෙකක් සම්බන්ධ කිරීමට 'but' (නමුත්) යෙදේ."
+      }
+    ];
+
+    const VERBS_DATABASE = [
+      { v1: "go", v2: "went", v3: "gone", ving: "going", si: "යනවා" },
+      { v1: "eat", v2: "ate", v3: "eaten", ving: "eating", si: "කනවා" },
+      { v1: "write", v2: "wrote", v3: "written", ving: "writing", si: "ලියනවා" },
+      { v1: "speak", v2: "spoke", v3: "spoken", ving: "speaking", si: "කතා කරනවා" },
+      { v1: "take", v2: "took", v3: "taken", ving: "taking", si: "ගන්නවා" },
+      { v1: "see", v2: "saw", v3: "seen", ving: "seeing", si: "දකිනවා" },
+      { v1: "come", v2: "came", v3: "come", ving: "coming", si: "එනවා" },
+      { v1: "give", v2: "gave", v3: "given", ving: "giving", si: "දෙනවා" },
+      { v1: "find", v2: "found", v3: "found", ving: "finding", si: "සොයාගන්නවා" }
+    ];
+
+    /* App State */
+    let currentTenseIdx = 0;
+    let currentShadowIdx = 0;
+    let shadowPlaybackRate = 1.0;
+    let isShadowRecording = false;
+    let currentCategoryFilter = 'all';
+    let currentExampleTypeFilter = 'all';
+    let currentHelpingCatFilter = 'all';
+    let currentConjCatFilter = 'all';
+    let userQuizAnswers = {};
+    let helpingQuizAnswers = {};
+    let conjQuizAnswers = {};
+    let completedLessons = JSON.parse(localStorage.getItem('dkans_completed_lessons') || '[]');
+    let userSpeakingXP = parseInt(localStorage.getItem('dkans_speaking_xp') || '540', 10);
+    let activeScenarioKey = 'job_interview';
+    let dialogueTurns = [];
+    let isMicRecording = false;
+    let globalSpeechRecognition = null;
+
+    /* Theme Handler */
+    const themeBtn = document.getElementById('themeButton');
+    if (localStorage.getItem('dkans_theme') === 'dark' || (!('dkans_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    themeBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('dkans_theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('dkans_theme', 'dark');
+      }
+    });
+
+    /* Speech Recognizer Factory */
+    function createSpeechRecognizer() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return null;
+      const rec = new SpeechRecognition();
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.lang = 'en-US';
+      return rec;
+    }
+
+    /* Toast */
+    function showToastAlert(msg, type = "success") {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastTextElement');
+      const icon = document.getElementById('toastIconElement');
+
+      text.textContent = msg;
+      if (type === "success") {
+        icon.className = "fa-solid fa-circle-check text-emerald-400 text-sm shrink-0";
+      } else if (type === "error") {
+        icon.className = "fa-solid fa-circle-xmark text-rose-500 text-sm shrink-0";
+      } else if (type === "warning") {
+        icon.className = "fa-solid fa-triangle-exclamation text-amber-400 text-sm shrink-0";
+      } else {
+        icon.className = "fa-solid fa-circle-info text-cyan-400 text-sm shrink-0";
+      }
+
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    function addSpeakingXP(points) {
+      userSpeakingXP += points;
+      localStorage.setItem('dkans_speaking_xp', userSpeakingXP.toString());
+      document.getElementById('speakingXpBadge').textContent = `${userSpeakingXP} XP`;
+      playBeepSound('xp');
+    }
+
+    /* Mobile Drawer Toggles */
+    function toggleMobileNavDrawer() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const backdrop = document.getElementById('mobileNavBackdrop');
+      drawer.classList.toggle('-translate-x-full');
+      backdrop.classList.toggle('hidden');
+    }
+
+    function toggleTenseListDrawer() {
+      const drawer = document.getElementById('tensesDrawer');
+      const backdrop = document.getElementById('mobileTenseBackdrop');
+      drawer.classList.toggle('-translate-x-full');
+      backdrop.classList.toggle('hidden');
+    }
+
+    function mobileNavClick(tab) {
+      switchActiveTab(tab);
+      toggleMobileNavDrawer();
+    }
+
+    /* Tab Switcher */
+    function switchActiveTab(tabName) {
+      const tabs = ['shadowing', 'chunks', 'roleplay', 'tenses', 'helpingwords', 'conjunctions', 'fixer', 'verbtable'];
+      tabs.forEach(t => {
+        const sec = document.getElementById(`section-${t}`);
+        const btn = document.getElementById(`navBtn-${t}`);
+        const mobBtn = document.getElementById(`mobileTabBtn-${t}`);
+
+        if (sec) {
+          if (t === tabName) sec.classList.remove('hidden');
+          else sec.classList.add('hidden');
+        }
+
+        if (btn) {
+          if (t === tabName) {
+            btn.className = "nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-2 transition duration-200 bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600 text-white shadow-md";
+          } else {
+            btn.className = "nav-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition duration-200 text-slate-600 dark:text-slate-300 hover:text-cyan-600";
+          }
+        }
+
+        if (mobBtn) {
+          if (t === tabName) {
+            mobBtn.className = "mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-purple-600 dark:text-purple-400 touch-target font-black";
+          } else {
+            mobBtn.className = "mobile-tab-btn flex flex-col items-center justify-center p-1 rounded-xl text-slate-500 dark:text-slate-400 touch-target font-normal";
+          }
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openMissionsModal() {
+      document.getElementById('missionsModal').classList.remove('hidden');
+    }
+    function closeMissionsModal() {
+      document.getElementById('missionsModal').classList.add('hidden');
+    }
+
+    /* Shadowing Methods */
+    function loadShadowDrill(idx) {
+      if (idx < 0 || idx >= SHADOWING_DRILLS.length) return;
+      currentShadowIdx = idx;
+      const drill = SHADOWING_DRILLS[idx];
+
+      document.getElementById('shadowingDrillIndex').textContent = idx + 1;
+      document.getElementById('shadowingTotalDrills').textContent = SHADOWING_DRILLS.length;
+      document.getElementById('shadowingCategoryBadge').textContent = drill.category;
+      document.getElementById('shadowTargetEnglish').textContent = `"${drill.english}"`;
+      document.getElementById('shadowTargetSinhala').textContent = `"${drill.sinhala}"`;
+      document.getElementById('shadowPhoneticTip').textContent = drill.tip;
+
+      document.getElementById('shadowFeedbackCard').classList.add('hidden');
+      document.getElementById('shadowStatusNotice').textContent = "Click Listen, then hit Record to Shadow";
+
+      renderShadowPlaylist();
+    }
+
+    function renderShadowPlaylist() {
+      const container = document.getElementById('shadowingPlaylistContainer');
+      container.innerHTML = '';
+
+      SHADOWING_DRILLS.forEach((item, i) => {
+        const isSelected = i === currentShadowIdx;
+        const div = document.createElement('div');
+        div.className = `p-2.5 rounded-2xl border text-xs font-bold cursor-pointer transition flex items-center justify-between ${
+          isSelected 
+            ? 'bg-purple-100 dark:bg-purple-950/80 border-purple-500 text-purple-900 dark:text-purple-200' 
+            : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700'
+        }`;
+        div.onclick = () => loadShadowDrill(i);
+
+        div.innerHTML = `
+          <div class="truncate pr-2">
+            <span class="text-[9px] uppercase font-black text-pink-500">${item.category}</span>
+            <p class="truncate text-slate-800 dark:text-slate-100">${item.english}</p>
+          </div>
+          <i class="fa-solid fa-circle-play ${isSelected ? 'text-purple-600' : 'text-slate-400'}"></i>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function setShadowPlaybackRate(rate) {
+      shadowPlaybackRate = rate;
+      const r08 = document.getElementById('rate-08');
+      const r10 = document.getElementById('rate-10');
+
+      if (rate === 0.8) {
+        r08.className = "touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-extrabold rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-300 shadow-sm";
+        r10.className = "touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-bold rounded-lg text-slate-600 dark:text-slate-400";
+      } else {
+        r10.className = "touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-extrabold rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-300 shadow-sm";
+        r08.className = "touch-target px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-bold rounded-lg text-slate-600 dark:text-slate-400";
+      }
+    }
+
+    function playShadowNativeVoice() {
+      const drill = SHADOWING_DRILLS[currentShadowIdx];
+      speakSentence(drill.english, shadowPlaybackRate);
+      document.getElementById('shadowStatusNotice').textContent = `Playing (${shadowPlaybackRate}x)...`;
+    }
+
+    function toggleShadowVoiceRecording() {
+      const micBtn = document.getElementById('shadowRecordMicBtn');
+      const textBtn = document.getElementById('shadowRecordBtnText');
+
+      if (isShadowRecording) {
+        if (globalSpeechRecognition) globalSpeechRecognition.stop();
+        isShadowRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+        textBtn.textContent = "2. Shadow (කියන්න)";
+        return;
+      }
+
+      const rec = createSpeechRecognizer();
+      if (!rec) {
+        showToastAlert("Microphone not supported on this browser.", "error");
+        return;
+      }
+
+      globalSpeechRecognition = rec;
+      isShadowRecording = true;
+      micBtn.classList.add('mic-live-pulse');
+      textBtn.textContent = "Recording...";
+      document.getElementById('shadowStatusNotice').textContent = "Listening to your voice...";
+
+      rec.onresult = (e) => {
+        evaluateShadowVoice(e.results[0][0].transcript);
+      };
+      rec.onend = () => {
+        isShadowRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+        textBtn.textContent = "2. Shadow (කියන්න)";
+      };
+      rec.onerror = () => {
+        isShadowRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+        textBtn.textContent = "2. Shadow (කියන්න)";
+        showToastAlert("Speech not detected. Try again.", "warning");
+      };
+      rec.start();
+    }
+
+    function evaluateShadowVoice(heard) {
+      const drill = SHADOWING_DRILLS[currentShadowIdx];
+      const targetClean = drill.english.toLowerCase().replace(/[^a-z0-9]/g, "");
+      const heardClean = heard.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+      let score = (targetClean === heardClean) ? 98 : (targetClean.includes(heardClean) || heardClean.includes(targetClean)) ? 88 : 72;
+
+      const card = document.getElementById('shadowFeedbackCard');
+      card.classList.remove('hidden');
+
+      document.getElementById('shadowScoreBadge').textContent = `${score}%`;
+      const feedback = document.getElementById('shadowAccuracyFeedback');
+
+      if (score >= 90) {
+        feedback.textContent = "Superb Native Cadence!";
+        card.className = "p-3.5 sm:p-4 rounded-2xl border bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200";
+        addSpeakingXP(30);
+        playBeepSound('success');
+      } else {
+        feedback.textContent = "Keep practicing rhythm";
+        card.className = "p-3.5 sm:p-4 rounded-2xl border bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800 text-amber-900 dark:text-amber-200";
+        addSpeakingXP(10);
+      }
+
+      document.getElementById('shadowHeardText').textContent = `Heard: "${heard}"`;
+      document.getElementById('shadowStatusNotice').textContent = "Drill Completed!";
+    }
+
+    function nextShadowDrill() {
+      loadShadowDrill((currentShadowIdx + 1) % SHADOWING_DRILLS.length);
+    }
+
+    /* Chunks */
+    function renderChunksModule(filter = 'all') {
+      const container = document.getElementById('chunksCardsContainer');
+      container.innerHTML = '';
+
+      const filtered = filter === 'all'
+        ? CONVERSATIONAL_CHUNKS
+        : CONVERSATIONAL_CHUNKS.filter(c => c.category === filter);
+
+      filtered.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = "glass-card p-4 sm:p-5 rounded-3xl shadow-lg border-2 border-slate-200 dark:border-slate-800 flex flex-col justify-between gap-3.5 hover:border-cyan-400 transition";
+
+        card.innerHTML = `
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300">
+                ${item.category.toUpperCase()}
+              </span>
+              <span class="text-[11px] font-bold text-slate-400">D'KANS Chunk</span>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">${item.chunk}</h3>
+            <p class="text-xs font-bold text-cyan-600 dark:text-cyan-400 sinhala-font">${item.meaningSi}</p>
+
+            <div class="p-3 rounded-2xl bg-cyan-50/60 dark:bg-slate-950/60 border border-cyan-100 dark:border-slate-800 space-y-0.5">
+              <p class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white">${item.example}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 sinhala-font font-medium">${item.exampleSi}</p>
+            </div>
+
+            <p class="text-xs text-slate-500 dark:text-slate-400 sinhala-font font-medium">
+              💡 ${item.tip}
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 pt-2 border-t border-slate-200/80 dark:border-slate-800">
+            <button onclick="speakSentence('${item.example.replace(/'/g, "\\'")}')" class="touch-target flex-1 py-2 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-xs font-bold flex items-center justify-center gap-1">
+              <i class="fa-solid fa-volume-high"></i> <span>Listen</span>
+            </button>
+            <button onclick="testSentenceVoice('${item.example.replace(/'/g, "\\'")}')" class="touch-target flex-1 py-2 rounded-xl bg-pink-100 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 text-xs font-bold flex items-center justify-center gap-1">
+              <i class="fa-solid fa-microphone"></i> <span>Practice</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterChunksCategory(cat) {
+      document.querySelectorAll('.chunk-filter-pill').forEach(btn => {
+        if (btn.dataset.chunkcat === cat) {
+          btn.className = "chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-black bg-white text-cyan-900 shadow-sm";
+        } else {
+          btn.className = "chunk-filter-pill touch-target shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white";
+        }
+      });
+      renderChunksModule(cat);
+    }
+
+    /* Gemini Caller */
+    async function requestGeminiContent(systemPrompt, userQuery) {
+      const apiKey = "";
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+      const payload = {
+        contents: [{ parts: [{ text: userQuery }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+          const data = await response.json();
+          return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    /* Situational Roleplay */
+    function initRoleplayDialogue() {
+      const scenario = SITUATIONAL_SCENARIOS[activeScenarioKey];
+      document.getElementById('scenarioOverviewText').textContent = scenario.overview;
+
+      const startersBox = document.getElementById('suggestedPhrasesList');
+      startersBox.innerHTML = '';
+      scenario.starters.forEach(item => {
+        const pill = document.createElement('div');
+        pill.className = "p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 cursor-pointer text-xs";
+        pill.onclick = () => {
+          document.getElementById('roleplayTextInput').value = item.en;
+        };
+        pill.innerHTML = `
+          <div class="flex items-center justify-between font-bold text-slate-900 dark:text-white">
+            <span class="truncate pr-1">${item.en}</span>
+            <i class="fa-regular fa-clone text-slate-400 shrink-0"></i>
+          </div>
+          <div class="text-[11px] text-slate-500 sinhala-font mt-0.5 truncate font-medium">${item.si}</div>
+        `;
+        startersBox.appendChild(pill);
+      });
+
+      dialogueTurns = [{ role: "assistant", en: scenario.introEn, si: scenario.introSi }];
+      renderRoleplayChatUI();
+    }
+
+    function onScenarioSelectChange() {
+      activeScenarioKey = document.getElementById('roleplayScenarioDropdown').value;
+      initRoleplayDialogue();
+    }
+
+    function renderRoleplayChatUI() {
+      const list = document.getElementById('roleplayMessagesList');
+      list.innerHTML = '';
+
+      dialogueTurns.forEach(msg => {
+        const isUser = msg.role === 'user';
+        const msgCard = document.createElement('div');
+        msgCard.className = `flex flex-col ${isUser ? 'items-end' : 'items-start'}`;
+
+        msgCard.innerHTML = `
+          <div class="max-w-[90%] sm:max-w-[85%] rounded-3xl p-3 sm:p-4 shadow-sm ${
+            isUser 
+              ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-tr-none' 
+              : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white rounded-tl-none'
+          }">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[9px] font-black uppercase tracking-wider ${isUser ? 'text-purple-200' : 'text-slate-400'}">
+                ${isUser ? 'You' : `${SITUATIONAL_SCENARIOS[activeScenarioKey].interviewer}`}
+              </span>
+              ${!isUser ? `<button onclick="speakSentence('${msg.en.replace(/'/g, "\\'")}')" class="text-xs text-pink-500"><i class="fa-solid fa-volume-high"></i></button>` : ''}
+            </div>
+            <p class="text-xs sm:text-sm font-bold">${msg.en}</p>
+            ${msg.si ? `<p class="text-[11px] mt-1.5 pt-1.5 border-t ${isUser ? 'border-purple-400 text-purple-100' : 'border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400'} sinhala-font font-medium">${msg.si}</p>` : ''}
+          </div>
+        `;
+        list.appendChild(msgCard);
+      });
+      list.scrollTop = list.scrollHeight;
+    }
+
+    function toggleRoleplayMicRecording() {
+      const micBtn = document.getElementById('roleplayVoiceMicBtn');
+      if (isMicRecording) {
+        if (globalSpeechRecognition) globalSpeechRecognition.stop();
+        isMicRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+        return;
+      }
+
+      const rec = createSpeechRecognizer();
+      if (!rec) {
+        showToastAlert("Microphone not supported on this browser.", "error");
+        return;
+      }
+
+      globalSpeechRecognition = rec;
+      isMicRecording = true;
+      micBtn.classList.add('mic-live-pulse');
+      showToastAlert("Speak in English...", "info");
+
+      rec.onresult = (e) => {
+        document.getElementById('roleplayTextInput').value = e.results[0][0].transcript;
+        sendRoleplayChatMessage();
+      };
+      rec.onend = () => {
+        isMicRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+      };
+      rec.onerror = () => {
+        isMicRecording = false;
+        micBtn.classList.remove('mic-live-pulse');
+      };
+      rec.start();
+    }
+
+    async function sendRoleplayChatMessage() {
+      const input = document.getElementById('roleplayTextInput');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      dialogueTurns.push({ role: "user", en: userText });
+      input.value = "";
+      renderRoleplayChatUI();
+      addSpeakingXP(15);
+
+      const list = document.getElementById('roleplayMessagesList');
+      const typingIndicator = document.createElement('div');
+      typingIndicator.id = "dialogueTypingIndicator";
+      typingIndicator.className = "flex items-center gap-1.5 text-xs text-slate-400 p-2 font-medium";
+      typingIndicator.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-pink-500"></i> Replying...`;
+      list.appendChild(typingIndicator);
+      list.scrollTop = list.scrollHeight;
+
+      const scenario = SITUATIONAL_SCENARIOS[activeScenarioKey];
+      const systemInstruction = `You are a spoken English partner roleplaying as "${scenario.interviewer}". Output strictly:
+ENGLISH: <1-2 sentences>
+SINHALA: <sinhala translation>`;
+
+      const aiReply = await requestGeminiContent(systemInstruction, userText);
+      const indicator = document.getElementById('dialogueTypingIndicator');
+      if (indicator) indicator.remove();
+
+      let replyEn = "That sounds great! Tell me more.";
+      let replySi = "ඒක ඉතා හොඳයි! මට තව විස්තර කියන්න.";
+
+      if (aiReply) {
+        const enMatch = aiReply.match(/ENGLISH:\s*(.*?)(?=\nSINHALA:|$)/s);
+        const siMatch = aiReply.match(/SINHALA:\s*(.*?)$/s);
+        if (enMatch && enMatch[1]) replyEn = enMatch[1].trim();
+        if (siMatch && siMatch[1]) replySi = siMatch[1].trim();
+      }
+
+      dialogueTurns.push({ role: "assistant", en: replyEn, si: replySi });
+      renderRoleplayChatUI();
+      speakSentence(replyEn);
+    }
+
+    /* AI Sentence Fixer */
+    function setSampleFixerSentence(str) {
+      document.getElementById('fixerSentenceInput').value = str;
+    }
+
+    function toggleFixerVoiceMic() {
+      const rec = createSpeechRecognizer();
+      if (!rec) {
+        showToastAlert("Microphone not supported on this browser.", "error");
+        return;
+      }
+      showToastAlert("Listening... කතා කරන්න...", "info");
+      rec.onresult = (e) => {
+        document.getElementById('fixerSentenceInput').value = e.results[0][0].transcript;
+        runSentenceAnalysis();
+      };
+      rec.start();
+    }
+
+    async function runSentenceAnalysis() {
+      const input = document.getElementById('fixerSentenceInput').value.trim();
+      if (!input) {
+        showToastAlert("Please enter or speak a sentence first.", "warning");
+        return;
+      }
+
+      document.getElementById('fixerEmptyState').classList.add('hidden');
+      document.getElementById('fixerResultCard').classList.add('hidden');
+      document.getElementById('fixerLoadingState').classList.remove('hidden');
+
+      const systemPrompt = `Analyze the user's sentence and produce valid JSON:
+{
+  "corrected": "exact grammatically correct sentence",
+  "naturalSpoken": "casual native phrase",
+  "sinhalaMeaning": "Sinhala translation",
+  "grammarExplanationSinhala": "Clear explanation in Sinhala"
+}`;
+
+      const aiData = await requestGeminiContent(systemPrompt, `Analyze sentence: "${input}"`);
+      document.getElementById('fixerLoadingState').classList.add('hidden');
+      const resultsContainer = document.getElementById('fixerResultCard');
+      resultsContainer.classList.remove('hidden');
+
+      let parsed = null;
+      if (aiData) {
+        try {
+          parsed = JSON.parse(aiData.replace(/```json|```/g, "").trim());
+        } catch (e) {}
+      }
+
+      if (!parsed) {
+        parsed = {
+          corrected: input.replace(/\bdid not went\b/i, "did not go").replace(/\bI am agree\b/i, "I agree"),
+          naturalSpoken: "Here is the native way to phrase this thought.",
+          sinhalaMeaning: "මෙම වාක්‍යයේ නිවැරදි සිංහල අර්ථය මෙයයි.",
+          grammarExplanationSinhala: "'did not' පසු ක්‍රියාපදයේ මූලික රූපය (V1) වන 'go' යෙදිය යුතුය."
+        };
+      }
+
+      resultsContainer.innerHTML = `
+        <div class="p-3 sm:p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 space-y-1">
+          <span class="text-[9px] font-black uppercase text-emerald-700 dark:text-emerald-300">1. Corrected:</span>
+          <div class="flex items-center justify-between">
+            <p class="text-xs sm:text-base font-black text-emerald-950 dark:text-emerald-200">${parsed.corrected}</p>
+            <button onclick="speakSentence('${parsed.corrected.replace(/'/g, "\\'")}')" class="text-emerald-600 p-1"><i class="fa-solid fa-volume-high"></i></button>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 sinhala-font pt-0.5">${parsed.sinhalaMeaning}</p>
+        </div>
+
+        <div class="p-3 sm:p-4 rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-300 dark:border-cyan-800 space-y-1">
+          <span class="text-[9px] font-black uppercase text-cyan-700 dark:text-cyan-300">2. Natural Native:</span>
+          <div class="flex items-center justify-between">
+            <p class="text-xs sm:text-sm font-bold text-cyan-950 dark:text-cyan-200">${parsed.naturalSpoken}</p>
+            <button onclick="speakSentence('${parsed.naturalSpoken.replace(/'/g, "\\'")}')" class="text-cyan-600 p-1"><i class="fa-solid fa-volume-high"></i></button>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800">
+          <span class="text-[9px] font-black uppercase text-slate-400">3. Grammar Explanation in Sinhala:</span>
+          <p class="text-xs text-slate-700 dark:text-slate-300 sinhala-font mt-0.5 leading-relaxed font-medium">${parsed.grammarExplanationSinhala}</p>
+        </div>
+      `;
+      addSpeakingXP(20);
+    }
+
+    /* 12 Tenses Engine */
+    function renderTensesNavList() {
+      const container = document.getElementById('tenseItemsContainer');
+      const searchQuery = document.getElementById('tenseSearchInput').value.toLowerCase();
+      container.innerHTML = '';
+
+      COMPREHENSIVE_TENSES.forEach((tense, index) => {
+        const matchesCategory = currentCategoryFilter === 'all' || tense.category === currentCategoryFilter;
+        const matchesSearch = searchQuery === '' || 
+          tense.name.toLowerCase().includes(searchQuery) || 
+          tense.sinhalaName.includes(searchQuery);
+
+        if (!matchesCategory || !matchesSearch) return;
+
+        const isCurrent = index === currentTenseIdx;
+        const isDone = completedLessons.includes(tense.id);
+
+        const itemBtn = document.createElement('button');
+        itemBtn.className = `w-full text-left p-3 rounded-2xl flex items-center justify-between border transition ${
+          isCurrent 
+            ? 'bg-gradient-to-r from-amber-500 via-pink-600 to-indigo-600 text-white border-transparent shadow-md' 
+            : 'bg-white/80 dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200'
+        }`;
+
+        itemBtn.innerHTML = `
+          <div class="min-w-0 pr-2">
+            <div class="flex items-center gap-1 mb-0.5">
+              <span class="text-[8px] font-black uppercase px-1.5 py-0.2 rounded-full ${isCurrent ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}">
+                ${tense.category}
+              </span>
+              ${isDone ? `<i class="fa-solid fa-circle-check text-[10px] ${isCurrent ? 'text-emerald-300' : 'text-emerald-500'}"></i>` : ''}
+            </div>
+            <p class="text-xs font-black truncate ${isCurrent ? 'text-white' : 'text-slate-900 dark:text-white'}">${tense.name}</p>
+            <p class="text-[10px] font-semibold truncate sinhala-font ${isCurrent ? 'text-amber-100' : 'text-slate-500 dark:text-slate-400'}">${tense.sinhalaName}</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
+        `;
+
+        itemBtn.onclick = () => {
+          loadTenseDetails(index);
+          const drawer = document.getElementById('tensesDrawer');
+          const backdrop = document.getElementById('mobileTenseBackdrop');
+          if (drawer && !drawer.classList.contains('-translate-x-full')) {
+            drawer.classList.add('-translate-x-full');
+            backdrop.classList.add('hidden');
+          }
+        };
+
+        container.appendChild(itemBtn);
+      });
+
+      updateMasterProgress();
+    }
+
+    function loadTenseDetails(index) {
+      if (index < 0 || index >= COMPREHENSIVE_TENSES.length) return;
+      currentTenseIdx = index;
+      userQuizAnswers = {};
+      const tense = COMPREHENSIVE_TENSES[index];
+
+      document.getElementById('heroTenseName').textContent = tense.name;
+      document.getElementById('heroTenseSinhala').textContent = tense.sinhalaName;
+      document.getElementById('heroCategoryBadge').textContent = `${tense.category.toUpperCase()} TENSE`;
+      document.getElementById('heroExplanation').textContent = tense.explanation;
+      document.getElementById('heroTenseImage').src = tense.heroImage;
+      document.getElementById('heroTenseImageCaption').textContent = tense.heroCaption;
+      document.getElementById('mobileCurrentTenseBadge').textContent = `${index + 1} of ${COMPREHENSIVE_TENSES.length}`;
+
+      const isDone = completedLessons.includes(tense.id);
+      const doneBadge = document.getElementById('heroCompletedBadge');
+      const toggleBtn = document.getElementById('toggleCompletedBtn');
+      const toggleText = document.getElementById('toggleCompletedBtnText');
+
+      if (isDone) {
+        doneBadge.classList.remove('hidden');
+        toggleText.textContent = "Done";
+        toggleBtn.className = "touch-target px-3.5 py-2.5 rounded-xl bg-slate-600 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-1.5";
+      } else {
+        doneBadge.classList.add('hidden');
+        toggleText.textContent = "Mark Done";
+        toggleBtn.className = "touch-target px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-1.5";
+      }
+
+      document.getElementById('formulaAffirmative').textContent = tense.affirmativeFormula;
+      document.getElementById('descAffirmative').textContent = tense.affirmativeDesc;
+      document.getElementById('formulaNegative').textContent = tense.negativeFormula;
+      document.getElementById('descNegative').textContent = tense.negativeDesc;
+      document.getElementById('formulaQuestion').textContent = tense.questionFormula;
+      document.getElementById('descQuestion').textContent = tense.questionDesc;
+
+      renderSentencesList(currentExampleTypeFilter);
+
+      const markersContainer = document.getElementById('timeMarkersContainer');
+      markersContainer.innerHTML = '';
+      tense.timeMarkers.forEach(item => {
+        const pill = document.createElement('div');
+        pill.className = "px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] font-bold flex items-center gap-1.5";
+        pill.innerHTML = `<span class="text-purple-600 dark:text-purple-400">${item.en}</span> <span class="text-slate-400">•</span> <span class="text-slate-600 dark:text-slate-300 sinhala-font font-medium">${item.si}</span>`;
+        markersContainer.appendChild(pill);
+      });
+
+      renderLessonQuiz();
+      renderTensesNavList();
+    }
+
+    function renderSentencesList(filterType = 'all') {
+      const tense = COMPREHENSIVE_TENSES[currentTenseIdx];
+      const container = document.getElementById('sentencesContainer');
+      container.innerHTML = '';
+
+      const filtered = filterType === 'all'
+        ? tense.examples
+        : tense.examples.filter(e => e.type === filterType);
+
+      filtered.forEach((ex) => {
+        const item = document.createElement('div');
+        item.className = "p-3.5 rounded-3xl bg-slate-50/90 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60 flex flex-col justify-between gap-3 shadow-sm";
+
+        item.innerHTML = `
+          <div class="flex gap-2.5">
+            ${ex.image ? `
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shrink-0 border border-slate-200 dark:border-slate-700">
+                <img src="${ex.image}" alt="scenario" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/4f46e5/ffffff?text=Grammar'"/>
+              </div>
+            ` : ''}
+
+            <div class="flex-1 min-w-0 space-y-0.5">
+              <span class="text-[8px] font-black uppercase px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
+                ${ex.tag || ex.type}
+              </span>
+              <p class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white leading-snug">${ex.english}</p>
+              <p class="text-[11px] text-slate-800 dark:text-slate-200 sinhala-font font-semibold">
+                ${ex.sinhala}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+            <button onclick="speakSentence('${ex.english.replace(/'/g, "\\'")}')" class="touch-target flex-1 py-1.5 text-xs font-bold rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 flex items-center justify-center gap-1">
+              <i class="fa-solid fa-volume-high text-xs"></i> <span>Listen</span>
+            </button>
+            <button onclick="testSentenceVoice('${ex.english.replace(/'/g, "\\'")}')" class="touch-target flex-1 py-1.5 text-xs font-bold rounded-xl bg-pink-100 dark:bg-pink-950/60 text-pink-800 dark:text-pink-200 flex items-center justify-center gap-1">
+              <i class="fa-solid fa-microphone text-xs"></i> <span>Mic</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function filterExamplesBy(type) {
+      currentExampleTypeFilter = type;
+      document.querySelectorAll('.ex-pill').forEach(btn => {
+        if (btn.dataset.extype === type) {
+          btn.className = "ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg bg-purple-600 text-white";
+        } else {
+          btn.className = "ex-pill touch-target px-2.5 py-1 text-xs font-bold rounded-lg text-slate-600 dark:text-slate-300";
+        }
+      });
+      renderSentencesList(type);
+    }
+
+    function testSentenceVoice(targetSentence) {
+      const rec = createSpeechRecognizer();
+      if (!rec) {
+        showToastAlert("Microphone not supported on this browser.", "error");
+        return;
+      }
+      showToastAlert("Listening... කතා කරන්න...", "info");
+      rec.onresult = (e) => {
+        const heard = e.results[0][0].transcript;
+        const normTarget = targetSentence.toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+        const normHeard = heard.toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+
+        if (normTarget === normHeard || normTarget.includes(normHeard) || normHeard.includes(normTarget)) {
+          showToastAlert(`විශිෂ්ටයි! You said: "${heard}"`, "success");
+          addSpeakingXP(15);
+          playBeepSound('success');
+        } else {
+          showToastAlert(`Heard: "${heard}"`, "warning");
+        }
+      };
+      rec.onerror = () => showToastAlert("Recognition failed. Please retry.", "error");
+      rec.start();
+    }
+
+    function renderLessonQuiz() {
+      const tense = COMPREHENSIVE_TENSES[currentTenseIdx];
+      const container = document.getElementById('lessonQuestionsContainer');
+      container.innerHTML = '';
+      updateLessonScoreDisplay();
+
+      tense.quiz.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = "p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 space-y-2.5";
+
+        const userAnswer = userQuizAnswers[qIndex];
+        const isAnswered = userAnswer !== undefined;
+
+        card.innerHTML = `
+          <div>
+            <span class="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase">Q${qIndex + 1}</span>
+            <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">${item.q}</h4>
+            <p class="text-[11px] text-slate-500 sinhala-font font-medium">💡 ${item.hint}</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+            ${item.options.map((opt, optIndex) => {
+              let optStyle = "touch-target p-2.5 rounded-xl border text-xs font-bold text-left transition flex items-center justify-between ";
+              if (!isAnswered) {
+                optStyle += "bg-slate-50 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 hover:border-purple-500 text-slate-800 dark:text-slate-200";
+              } else {
+                if (optIndex === item.correct) {
+                  optStyle += "bg-emerald-100 dark:bg-emerald-950/80 border-emerald-500 text-emerald-950 dark:text-emerald-200 font-black";
+                } else if (userAnswer === optIndex) {
+                  optStyle += "bg-rose-100 dark:bg-rose-950/80 border-rose-500 text-rose-950 dark:text-rose-200";
+                } else {
+                  optStyle += "bg-slate-100 dark:bg-slate-800/40 border-transparent opacity-40 text-slate-400";
+                }
+              }
+
+              return `
+                <button type="button" ${isAnswered ? 'disabled' : ''} onclick="submitQuizOption(${qIndex}, ${optIndex})" class="${optStyle}">
+                  <span>${opt}</span>
+                  ${isAnswered && optIndex === item.correct ? '<i class="fa-solid fa-check text-emerald-600"></i>' : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          ${isAnswered ? `
+            <div class="p-2.5 rounded-xl border ${userAnswer === item.correct ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-200' : 'bg-rose-50 border-rose-300 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200'} text-xs sinhala-font">
+              <p class="font-medium">${item.sinhalaReason}</p>
+            </div>
+          ` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function submitQuizOption(qIndex, selectedOpt) {
+      userQuizAnswers[qIndex] = selectedOpt;
+      renderLessonQuiz();
+      updateLessonScoreDisplay();
+
+      const tense = COMPREHENSIVE_TENSES[currentTenseIdx];
+      if (selectedOpt === tense.quiz[qIndex].correct) {
+        addSpeakingXP(20);
+        playBeepSound('success');
+      } else {
+        playBeepSound('error');
+      }
+    }
+
+    function updateLessonScoreDisplay() {
+      const tense = COMPREHENSIVE_TENSES[currentTenseIdx];
+      let correct = 0;
+      Object.keys(userQuizAnswers).forEach(k => {
+        if (userQuizAnswers[k] === tense.quiz[k].correct) correct++;
+      });
+      document.getElementById('lessonScoreBadge').textContent = `${correct} / ${tense.quiz.length}`;
+    }
+
+    function retryCurrentQuiz() {
+      userQuizAnswers = {};
+      renderLessonQuiz();
+      showToastAlert("Quiz reset.", "info");
+    }
+
+    function toggleCurrentLessonDone(forceComplete = false) {
+      const tense = COMPREHENSIVE_TENSES[currentTenseIdx];
+      const exists = completedLessons.includes(tense.id);
+
+      if (forceComplete && !exists) {
+        completedLessons.push(tense.id);
+      } else if (!forceComplete) {
+        if (exists) completedLessons = completedLessons.filter(id => id !== tense.id);
+        else completedLessons.push(tense.id);
+      }
+
+      localStorage.setItem('dkans_completed_lessons', JSON.stringify(completedLessons));
+      loadTenseDetails(currentTenseIdx);
+      showToastAlert(completedLessons.includes(tense.id) ? "Marked as completed!" : "Status updated.", "success");
+    }
+
+    function updateMasterProgress() {
+      const total = COMPREHENSIVE_TENSES.length;
+      const done = completedLessons.length;
+      const pct = Math.round((done / total) * 100);
+
+      document.getElementById('masterCompletedCount').textContent = done;
+      document.getElementById('masterProgressPct').textContent = `${pct}%`;
+      document.getElementById('masterProgressBar').style.width = `${pct}%`;
+    }
+
+    function resetUserProgress() {
+      completedLessons = [];
+      localStorage.removeItem('dkans_completed_lessons');
+      loadTenseDetails(currentTenseIdx);
+      showToastAlert("Progress reset.", "info");
+    }
+
+    function setTenseFilter(cat) {
+      currentCategoryFilter = cat;
+      document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "cat-filter-btn py-1.5 rounded-lg bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-sm text-center";
+        } else {
+          btn.className = "cat-filter-btn py-1.5 rounded-lg text-slate-600 dark:text-slate-400 text-center";
+        }
+      });
+      renderTensesNavList();
+    }
+
+    function navigateTenseIndex(dir) {
+      const target = currentTenseIdx + dir;
+      if (target >= 0 && target < COMPREHENSIVE_TENSES.length) {
+        loadTenseDetails(target);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function scrollToExercise() {
+      document.getElementById('exerciseAnchor').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* Helping Words */
+    function renderHelpingWordsModule() {
+      const container = document.getElementById('helpingWordsCardsGrid');
+      container.innerHTML = '';
+
+      const filtered = currentHelpingCatFilter === 'all'
+        ? HELPING_WORDS_DB
+        : HELPING_WORDS_DB.filter(g => g.category === currentHelpingCatFilter);
+
+      filtered.forEach((group) => {
+        const card = document.createElement('div');
+        card.className = "glass-card p-4 sm:p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col justify-between gap-3";
+
+        card.innerHTML = `
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">${group.title}</h3>
+              <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300">
+                ${group.category.toUpperCase()}
+              </span>
+            </div>
+
+            <p class="text-xs font-bold text-cyan-600 dark:text-cyan-400 sinhala-font">${group.sinhalaTitle}</p>
+            <p class="text-[11px] text-slate-600 dark:text-slate-300 sinhala-font font-medium">${group.usageSinhala}</p>
+
+            <div class="p-2.5 bg-slate-50 dark:bg-slate-950 rounded-xl font-mono text-[11px] font-bold text-slate-800 dark:text-slate-200">
+              ${group.formula}
+            </div>
+
+            <div class="space-y-2 pt-1">
+              ${group.words.map(w => `
+                <div class="p-2.5 rounded-xl bg-cyan-50/50 dark:bg-slate-800/50 border border-cyan-100 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                  <div>
+                    <span class="text-xs font-black text-cyan-700 dark:text-cyan-300">${w.word}</span>
+                    <p class="text-xs font-bold text-slate-800 dark:text-slate-100">${w.example}</p>
+                    <p class="text-[10px] text-slate-500 sinhala-font font-medium">${w.si}</p>
+                  </div>
+                  <div class="flex items-center gap-1 self-end sm:self-center">
+                    <button onclick="speakSentence('${w.example.replace(/'/g, "\\'")}')" class="touch-target p-1.5 rounded-lg bg-cyan-100 text-cyan-700 text-xs" title="Listen">
+                      <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <button onclick="testSentenceVoice('${w.example.replace(/'/g, "\\'")}')" class="touch-target p-1.5 rounded-lg bg-pink-100 text-pink-700 text-xs" title="Mic">
+                      <i class="fa-solid fa-microphone"></i>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      renderHelpingWordsQuiz();
+    }
+
+    function filterHelpingCategory(cat) {
+      currentHelpingCatFilter = cat;
+      document.querySelectorAll('.hw-cat-btn').forEach(btn => {
+        if (btn.dataset.hwcat === cat) {
+          btn.className = "hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-black bg-white text-cyan-800 shadow-sm";
+        } else {
+          btn.className = "hw-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white";
+        }
+      });
+      renderHelpingWordsModule();
+    }
+
+    function renderHelpingWordsQuiz() {
+      const container = document.getElementById('helpingWordsQuizContainer');
+      container.innerHTML = '';
+
+      let correctCount = 0;
+      Object.keys(helpingQuizAnswers).forEach(idx => {
+        if (helpingQuizAnswers[idx] === HELPING_WORDS_QUIZ[idx].correct) correctCount++;
+      });
+      document.getElementById('helpingWordsScoreBadge').textContent = `${correctCount} / ${HELPING_WORDS_QUIZ.length}`;
+
+      HELPING_WORDS_QUIZ.forEach((item, qIdx) => {
+        const card = document.createElement('div');
+        card.className = "p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-2";
+
+        const userAnswer = helpingQuizAnswers[qIdx];
+        const isAnswered = userAnswer !== undefined;
+
+        card.innerHTML = `
+          <div>
+            <span class="text-[10px] font-bold text-cyan-600 dark:text-cyan-400 uppercase">Q${qIdx + 1}</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white">${item.q}</h4>
+            <p class="text-[11px] text-slate-500 sinhala-font font-medium">තේරුම: ${item.hint}</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+            ${item.options.map((opt, optIdx) => {
+              let btnClass = "touch-target p-2 rounded-xl border text-xs font-bold text-center transition ";
+              if (!isAnswered) {
+                btnClass += "bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 hover:border-cyan-500";
+              } else {
+                if (optIdx === item.correct) {
+                  btnClass += "bg-emerald-100 dark:bg-emerald-950/80 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-black";
+                } else if (userAnswer === optIdx) {
+                  btnClass += "bg-rose-100 dark:bg-rose-950/80 border-rose-500 text-rose-900 dark:text-rose-200";
+                } else {
+                  btnClass += "bg-slate-100 dark:bg-slate-900 opacity-40";
+                }
+              }
+
+              return `<button type="button" ${isAnswered ? 'disabled' : ''} onclick="submitHelpingQuiz(${qIdx}, ${optIdx})" class="${btnClass}">${opt}</button>`;
+            }).join('')}
+          </div>
+
+          ${isAnswered ? `
+            <div class="p-2 rounded-xl ${userAnswer === item.correct ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 text-xs' : 'bg-rose-50 text-rose-900 dark:bg-rose-950/40 text-xs'} sinhala-font font-medium">
+              ${userAnswer === item.correct ? '✓ නිවැරදියි! ' : '✕ නැවත බලන්න. '}${item.sinhalaReason}
+            </div>
+          ` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function submitHelpingQuiz(qIdx, optIdx) {
+      helpingQuizAnswers[qIdx] = optIdx;
+      renderHelpingWordsQuiz();
+      if (optIdx === HELPING_WORDS_QUIZ[qIdx].correct) {
+        addSpeakingXP(15);
+        playBeepSound('success');
+      } else {
+        playBeepSound('error');
+      }
+    }
+
+    /* Conjunctions */
+    function renderConjunctionsModule() {
+      const container = document.getElementById('conjunctionsCardsContainer');
+      container.innerHTML = '';
+
+      const filtered = currentConjCatFilter === 'all'
+        ? CONJUNCTIONS_DB
+        : CONJUNCTIONS_DB.filter(c => c.category === currentConjCatFilter);
+
+      filtered.forEach((group) => {
+        const card = document.createElement('div');
+        card.className = "glass-card p-4 sm:p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col justify-between gap-3.5";
+
+        card.innerHTML = `
+          <div class="space-y-3">
+            <div class="relative rounded-2xl overflow-hidden aspect-[21/9] border border-slate-200 dark:border-slate-700">
+              <img src="${group.image}" alt="${group.title}" class="w-full h-full object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 flex items-end p-2.5">
+                <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-pink-500 text-white">
+                  ${group.badge}
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">${group.title}</h3>
+              <p class="text-xs font-bold text-pink-600 dark:text-pink-400 sinhala-font mt-0.5">${group.sinhalaTitle}</p>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-pink-50 dark:bg-slate-950 border border-pink-200 dark:border-pink-900/60 font-mono text-[11px] font-bold">
+              ${group.formula}
+            </div>
+
+            <div class="space-y-2 pt-1">
+              ${group.examples.map(ex => `
+                <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                  <div>
+                    <span class="px-1.5 py-0.2 rounded-md bg-pink-100 text-pink-700 dark:bg-pink-950 font-black text-[10px]">${ex.word}</span>
+                    <p class="text-xs font-extrabold text-slate-900 dark:text-white mt-0.5">${ex.en}</p>
+                    <p class="text-[10px] text-slate-500 sinhala-font font-medium">${ex.si}</p>
+                  </div>
+                  <div class="flex items-center gap-1 self-end sm:self-center">
+                    <button onclick="speakSentence('${ex.en.replace(/'/g, "\\'")}')" class="touch-target p-1.5 rounded-lg bg-purple-100 text-purple-700 text-xs">
+                      <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <button onclick="testSentenceVoice('${ex.en.replace(/'/g, "\\'")}')" class="touch-target p-1.5 rounded-lg bg-pink-100 text-pink-700 text-xs">
+                      <i class="fa-solid fa-microphone"></i>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      renderConjunctionsQuiz();
+    }
+
+    function filterConjunctionCategory(cat) {
+      currentConjCatFilter = cat;
+      document.querySelectorAll('.conj-cat-btn').forEach(btn => {
+        if (btn.dataset.conjcat === cat) {
+          btn.className = "conj-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-black bg-white text-pink-700 shadow-sm";
+        } else {
+          btn.className = "conj-cat-btn touch-target shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white";
+        }
+      });
+      renderConjunctionsModule();
+    }
+
+    function renderConjunctionsQuiz() {
+      const container = document.getElementById('conjunctionsQuizContainer');
+      container.innerHTML = '';
+
+      let correctCount = 0;
+      Object.keys(conjQuizAnswers).forEach(idx => {
+        if (conjQuizAnswers[idx] === CONJUNCTIONS_QUIZ[idx].correct) correctCount++;
+      });
+      document.getElementById('conjunctionsScoreBadge').textContent = `${correctCount} / ${CONJUNCTIONS_QUIZ.length}`;
+
+      CONJUNCTIONS_QUIZ.forEach((item, qIdx) => {
+        const card = document.createElement('div');
+        card.className = "p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-2";
+
+        const userAnswer = conjQuizAnswers[qIdx];
+        const isAnswered = userAnswer !== undefined;
+
+        card.innerHTML = `
+          <div>
+            <span class="text-[10px] font-bold text-pink-600 dark:text-pink-400 uppercase">Q${qIdx + 1}</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white">${item.q}</h4>
+            <p class="text-[11px] text-slate-500 sinhala-font font-medium">තේරුම: ${item.hint}</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+            ${item.options.map((opt, optIdx) => {
+              let btnClass = "touch-target p-2 rounded-xl border text-xs font-bold text-center transition ";
+              if (!isAnswered) {
+                btnClass += "bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 hover:border-pink-500";
+              } else {
+                if (optIdx === item.correct) {
+                  btnClass += "bg-emerald-100 dark:bg-emerald-950/80 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-black";
+                } else if (userAnswer === optIdx) {
+                  btnClass += "bg-rose-100 dark:bg-rose-950/80 border-rose-500 text-rose-900 dark:text-rose-200";
+                } else {
+                  btnClass += "bg-slate-100 dark:bg-slate-900 opacity-40";
+                }
+              }
+
+              return `<button type="button" ${isAnswered ? 'disabled' : ''} onclick="submitConjunctionQuiz(${qIdx}, ${optIdx})" class="${btnClass}">${opt}</button>`;
+            }).join('')}
+          </div>
+
+          ${isAnswered ? `
+            <div class="p-2 rounded-xl ${userAnswer === item.correct ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 text-xs' : 'bg-rose-50 text-rose-900 dark:bg-rose-950/40 text-xs'} sinhala-font font-medium">
+              ${userAnswer === item.correct ? '✓ නිවැරදියි! ' : '✕ නැවත බලන්න. '}${item.sinhalaReason}
+            </div>
+          ` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function submitConjunctionQuiz(qIdx, optIdx) {
+      conjQuizAnswers[qIdx] = optIdx;
+      renderConjunctionsQuiz();
+      if (optIdx === CONJUNCTIONS_QUIZ[qIdx].correct) {
+        addSpeakingXP(15);
+        playBeepSound('success');
+      } else {
+        playBeepSound('error');
+      }
+    }
+
+    /* Verbs Table */
+    function renderVerbsTable(query = '') {
+      const tbody = document.getElementById('verbTableBody');
+      tbody.innerHTML = '';
+      const q = query.toLowerCase();
+
+      VERBS_DATABASE.forEach(v => {
+        if (q && !v.v1.includes(q) && !v.v2.includes(q) && !v.v3.includes(q) && !v.si.includes(q)) return;
+
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition";
+        tr.innerHTML = `
+          <td class="p-3 text-slate-800 dark:text-slate-200 sinhala-font font-bold">${v.si}</td>
+          <td class="p-3 text-emerald-600 dark:text-emerald-400 font-black">${v.v1}</td>
+          <td class="p-3 text-orange-600 dark:text-orange-400 font-black">${v.v2}</td>
+          <td class="p-3 text-purple-600 dark:text-purple-400 font-black">${v.v3}</td>
+          <td class="p-3 text-cyan-600 dark:text-cyan-400 font-black">${v.ving}</td>
+          <td class="p-3 text-center">
+            <button onclick="speakSentence('${v.v1}, ${v.v2}, ${v.v3}')" class="touch-target p-1.5 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-300" title="Listen">
+              <i class="fa-solid fa-volume-high text-xs"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterVerbTable(val) {
+      renderVerbsTable(val);
+    }
+
+    /* Event Listeners & Onload */
+    document.getElementById('tenseSearchInput').addEventListener('input', renderTensesNavList);
+
+    window.onload = function() {
+      updateVoiceUIControls();
+      loadShadowDrill(0);
+      renderChunksModule();
+      loadTenseDetails(0);
+      renderHelpingWordsModule();
+      renderConjunctionsModule();
+      initRoleplayDialogue();
+      renderVerbsTable();
+      document.getElementById('speakingXpBadge').textContent = `${userSpeakingXP} XP`;
+    };
+  </script>
+</body>
+</html>
